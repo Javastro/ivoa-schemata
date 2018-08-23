@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Contracts">
+
+  <title>IVOA schemata</title>
+
+  <body>
+    <menu name="Reference">
+    	<item name="Schema documents (.wsdl, .xsd)"  href="schema/index.html"/>
+    </menu>
+    
+    <links>
+    </links>
+  </body>
+</project>

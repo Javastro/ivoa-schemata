@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+  <!-- <title>AstroGrid sub-system contracts</title>  -->
+  <body>
+   <breadcrumbs>
+       <item name="Contracts " href="${astrogrid_doc_URL_root}/p/contracts/${project.version}/"/>
+    </breadcrumbs>
+  
+    <menu name="Contracts">
+      <item name="XML schemata and WSDL" href="schema/index.html"/>
+    </menu>
+    <menu ref="reports"/>
+  </body>
+</project>

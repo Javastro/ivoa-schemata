@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<links xmlns="http://titanium.dstc.edu.au/xml/xs3p">
+     <schema file-location="AGParameterDefinition.xsd" docfile-location="AGParameterDefinition.html"/>
+     <schema file-location="Credentials.xsd" docfile-location="Credentials.html"/>
+     <schema file-location="ExecutionRecord.xsd" docfile-location="ExecutionRecord.html"/>
+     <schema file-location="AGApplicationBase.xsd" docfile-location="AGApplicationBase.html"/>
+     <schema file-location="./externalSchema/VOResource-v0.9.xsd" docfile-location="./externalSchema/VOResource-v0.9.html"/>
+     <schema file-location="./externalSchema/VOTable.xsd" docfile-location="./externalSchema/VOTable.html"/>
+     <schema file-location="CEATypes.xsd" docfile-location="CEATypes.html"/>
+<!--todo need to add all the other mappings that we might be using...-->     
+</links>
