@@ -57,6 +57,8 @@ public final class Namespaces {
     public static final Namespaces VODML = new Namespaces("vodml", "http://www.ivoa.net/xml/VODML/v1");
     public static final Namespaces SSAP = new Namespaces("ssap", "http://www.ivoa.net/xml/SSA/v1.1");
     public static final Namespaces SLAP = new Namespaces("slap", "http://www.ivoa.net/xml/SLAP/v1.0");
+    public static final Namespaces VOT = new Namespaces("vot", "http://www.ivoa.net/xml/VOTable/v1.3");
+    
      
 //TODO add the other "current" ones...         
     public static String[] getNamespaceURIs()
