@@ -7,6 +7,7 @@
       <groupId>org.javastro</groupId>
       <artifactId>javastro-suite</artifactId>
       <version>0.1</version>
+      <relativePath>../mavenbase/</relativePath>
    </parent>
    <artifactId>ivoa-schema</artifactId>
    <packaging>jar</packaging>

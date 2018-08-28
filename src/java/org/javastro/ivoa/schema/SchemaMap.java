@@ -53,6 +53,7 @@ public class SchemaMap {
         ALL.put("http://www.ivoa.net/xml/VOTable/v1.0",SchemaMap.class.getResource("/schema/VOTable-1.0.xsd"));
         ALL.put("http://www.ivoa.net/xml/VOTable/v1.1",SchemaMap.class.getResource("/schema/VOTable-1.1.xsd"));
         ALL.put("http://www.ivoa.net/xml/VOTable/v1.2",SchemaMap.class.getResource("/schema/VOTable-1.2.xsd"));
+        ALL.put("http://www.ivoa.net/xml/VOTable/v1.3",SchemaMap.class.getResource("/schema/VOTable-1.3.xsd"));
 
         //vo-resource-types
         ALL.put("http://www.ivoa.net/xml/ConeSearch/v1.0",SchemaMap.class.getResource("/schema/ConeSearch-v1.0.xsd"));
@@ -80,6 +81,7 @@ public class SchemaMap {
         //VOSI
         ALL.put("http://www.ivoa.net/xml/VOSIAvailability/v1.0", SchemaMap.class.getResource("/schema/VOSIAvailability-v1.0.xsd"));
         ALL.put("http://www.ivoa.net/xml/VOSICapabilities/v1.0", SchemaMap.class.getResource("/schema/VOSICapabilities-v1.0.xsd"));
+        ALL.put("http://www.ivoa.net/xml/VOSITables/v1.0", SchemaMap.class.getResource("/schema/VOSITables-v1.1.xsd"));
 
         ALL.put("http://www.ivoa.net/xml/UWS/v1.0", SchemaMap.class.getResource("/schema/UWS-1.1.xsd"));
 
