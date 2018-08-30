@@ -10,7 +10,7 @@ Defines general application resource metadata.  ...
    elementFormDefault="unqualified" attributeFormDefault="unqualified"
    version="1.0rc1$"
 >
-   <xs:import schemaLocation="./VOResource-v1.0.xsd" namespace="http://www.ivoa.net/xml/VOResource/v1.0"></xs:import>
+   <xs:import schemaLocation="./VOResource-v1.1.xsd" namespace="http://www.ivoa.net/xml/VOResource/v1.0"></xs:import>
    <xs:annotation>
       <xs:appinfo>
          <vm:schemaName>VOApplication</vm:schemaName>

@@ -68,7 +68,7 @@ public class SchemaMap {
        
       	ALL.put("http://www.ivoa.net/xml/VORegistry/v1.0",SchemaMap.class.getResource("/schema/VORegistry-v1.0.xsd"));        	
        
-        ALL.put("http://www.ivoa.net/xml/VOResource/v1.0",SchemaMap.class.getResource("/schema/VOResource-v1.0.xsd"));
+        ALL.put("http://www.ivoa.net/xml/VOResource/v1.0",SchemaMap.class.getResource("/schema/VOResource-v1.1.xsd"));
         
       	ALL.put("http://www.ivoa.net/xml/VOApplication/v1.0rc1",SchemaMap.class.getResource("/schema/VOApplication-1.0.xsd"));
         ALL.put("http://www.ivoa.net/xml/StandardsRegExt/v1.0",SchemaMap.class.getResource("/schema/StandardsRegExt-1.0.xsd"));
