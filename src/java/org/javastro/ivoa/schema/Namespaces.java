@@ -49,6 +49,7 @@ public final class Namespaces {
     public static final Namespaces XLINK = new Namespaces("xlink","http://www.w3.org/1999/xlink");
     public static final Namespaces STC = new Namespaces("stc","http://www.ivoa.net/xml/STC/stc-v1.30.xsd");
     public static final Namespaces TAP = new Namespaces("tap","http://www.ivoa.net/xml/TAPRegExt/v1.0");  
+    public static final Namespaces REGTAP = new Namespaces("rr","http://www.ivoa.net/xml/RegTAP/v1.0");  
     public static final Namespaces CS = new Namespaces("cs","http://www.ivoa.net/xml/ConeSearch/v1.0");  
     public static final Namespaces SIA = new Namespaces("sia","http://www.ivoa.net/xml/SIA/v1.1");  
     public static final Namespaces VSTD = new Namespaces("vstd","http://www.ivoa.net/xml/StandardsRegExt/v1.0");  

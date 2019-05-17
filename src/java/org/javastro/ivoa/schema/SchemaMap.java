@@ -8,9 +8,16 @@
  */
 package org.javastro.ivoa.schema;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import javax.xml.transform.stream.StreamSource;
+import static org.javastro.ivoa.schema.Namespaces.*;
 
 /**
  * static class that provides maps of all namespace - schema locations in this project.
@@ -18,6 +25,11 @@ import java.util.Map;
  */
 public class SchemaMap {
 
+    
+    /** logger for this class */
+    private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory
+            .getLogger(SchemaMap.class);
+    
     /** Construct a new SchemaMap
      * 
      */
@@ -91,6 +103,21 @@ public class SchemaMap {
     public static URL getSchemaURL(String namespace)
     {
 	return ALL.get(namespace);
+    }
+    
+    
+    public static StreamSource[] getRegistrySchema()
+    {
+        List<Namespaces> ns = Arrays.asList(RI,VR,VS,SIA,CS,REG, VA, VSTD, VOSI_TAB);
+        return ns.stream().map(n -> SchemaMap.getSchemaURL(n.getNamespace()))
+                   .map(u -> {
+                    try {
+                        return new StreamSource(u.openStream(),u.toExternalForm());
+                    } catch (IOException e) {
+                        logger.error("problem with getting url for schema", e);
+                        return new StreamSource();//IMPL is this OK? hopefully should not happen
+                    }
+                }).toArray(StreamSource[]::new);
     }
 
 }

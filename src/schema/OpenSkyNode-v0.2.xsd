@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
            xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
-           xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.0"
            xmlns:sn="http://www.ivoa.net/xml/SkyNode/v0.2"
            xmlns:vm="http://www.ivoa.net/xml/VOMetadata/v0.1"
            targetNamespace="http://www.ivoa.net/xml/SkyNode/v0.2"
@@ -22,10 +21,7 @@
    </xs:annotation>
 
    <xs:import namespace="http://www.ivoa.net/xml/VOResource/v1.0"
-            schemaLocation="./VOResource-v1.0.xsd"/>
-   <xs:import namespace="http://www.ivoa.net/xml/VODataService/v1.0"
-            schemaLocation="./VODataService-v1.0.xsd"/>
-
+            schemaLocation="./VOResource-v1.1.xsd"/>
    <xs:complexType name="SNCapRestriction" abstract="true">
       <xs:annotation>
          <xs:documentation>

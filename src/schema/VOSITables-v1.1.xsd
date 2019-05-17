@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema targetNamespace="http://www.ivoa.net/xml/VOSITables/v1.0"
-            xmlns:vosi="http://www.ivoa.net/xml/VOSITables/v1.0"
             xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1"
             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             elementFormDefault="qualified"
             attributeFormDefault="unqualified"
-            version="1.1-REC-err1">
+            version="1.1">
 
   <xsd:annotation>
      <xsd:documentation>
@@ -19,50 +18,27 @@
   <xsd:import namespace="http://www.ivoa.net/xml/VODataService/v1.1"
               schemaLocation="./VODataService-v1.1.xsd" />
 
-<xsd:attribute name="version" type="xsd:string" default="1.0">
-  <xsd:annotation>
-     <xsd:documentation>
-       This is used to signal which major.minor version of the VOSI standard the response document follows.
-       It is named version rather than the now recommended stdVersion for historical reasons.
-     </xsd:documentation>
-  </xsd:annotation>  
-</xsd:attribute>
-
   <!--
     -  the root element for a VOSI tableset metadata
     -->
-  <xsd:element name="tableset" >
+  <xsd:element name="tableset" type="vs:TableSet" >
      <xsd:annotation>
        <xsd:documentation>
          A description of the table metadata supported by the 
          service associated with a VOSI-enabled resource.
        </xsd:documentation>
      </xsd:annotation>
-    <xsd:complexType>
-       <xsd:complexContent>
-          <xsd:extension base="vs:TableSet">
-             <xsd:attribute ref="vosi:version" use="optional"></xsd:attribute>
-          </xsd:extension>
-       </xsd:complexContent>
-    </xsd:complexType>
   </xsd:element>
 
   <!--
     -  single table root element for a VOSI table metadata
     -->
-  <xsd:element name="table">
+  <xsd:element name="table" type="vs:Table" >
      <xsd:annotation>
        <xsd:documentation>
          A description of a single table supported by the
          service associated with a VOSI-enabled resource.
        </xsd:documentation>
      </xsd:annotation>
-    <xsd:complexType>
-       <xsd:complexContent>
-          <xsd:extension base="vs:Table">
-             <xsd:attribute ref="vosi:version" use="optional"></xsd:attribute>
-          </xsd:extension>
-       </xsd:complexContent>
-    </xsd:complexType>
   </xsd:element>
 </xsd:schema>
