@@ -1,0 +1,8 @@
+language: java
+jdk:
+- openjdk8
+sudo: false
+#script: mvn clean verify
+#after_success:
+#- mvn clean site -X
+

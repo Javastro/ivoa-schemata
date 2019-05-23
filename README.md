@@ -1,6 +1,10 @@
 IVOA Schemata
 ============================
 
+[![Build Status](https://travis-ci.org/javastro/ivoa-schema.svg?branch=master)](https://travis-ci.org/javastro/ivoa-schema)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.javastro/ivoa-schema/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.javastro/ivoa-schema/)
+
+
 The aim of this project is to gather together the  
 [IVOA schemata](http://www.ivoa.net/xml/) so that they can be referred to as local
 files - which in turn can have benefits to software that wants to use a schema

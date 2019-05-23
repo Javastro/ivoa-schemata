@@ -5,14 +5,14 @@
    <modelVersion>4.0.0</modelVersion>
    <parent>
       <groupId>org.javastro</groupId>
-      <artifactId>javastro-suite</artifactId>
-      <version>0.2</version>
+      <artifactId>javastro-mavenbase</artifactId>
+      <version>0.3.1</version>
       <relativePath>../mavenbase/</relativePath>
    </parent>
    <artifactId>ivoa-schema</artifactId>
    <packaging>jar</packaging>
-   <name>IVOA schema</name>
-   <version>1.0-SNAPSHOT</version>
+   <name>ivoa-schemata</name>
+   <version>0.9</version>
    <description>
       A collection of IVOA schema files and some associated utility classes.
    </description>

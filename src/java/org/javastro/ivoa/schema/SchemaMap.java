@@ -108,7 +108,7 @@ public class SchemaMap {
     
     public static StreamSource[] getRegistrySchema()
     {
-        List<Namespaces> ns = Arrays.asList(RI,VR,VS,SIA,CS,REG, VA, VSTD, VOSI_TAB);
+        List<Namespaces> ns = Arrays.asList(RI,VR,VS,SIA,CS,REG, VA, VSTD, VOSI_TAB, STC);
         return ns.stream().map(n -> SchemaMap.getSchemaURL(n.getNamespace()))
                    .map(u -> {
                     try {
