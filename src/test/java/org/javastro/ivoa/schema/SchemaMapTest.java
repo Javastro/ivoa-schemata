@@ -1,10 +1,12 @@
 package org.javastro.ivoa.schema;
 
+import java.io.File;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.Map;
 
 import org.javastro.ivoa.schema.SchemaMap;
+import org.junit.Test;
 
 import junit.framework.TestCase;
 
@@ -15,6 +17,7 @@ import junit.framework.TestCase;
  */
 public class SchemaMapTest extends TestCase {
   
+  @Test
   public void testAllEntriesPresent() throws Exception {
     Map m = SchemaMap.ALL;
     
@@ -30,7 +33,8 @@ public class SchemaMapTest extends TestCase {
       System.out.println(v);
       assertTrue(v instanceof URL);
       URL u = (URL)v;
-      u.openStream(); // throws exceptions if URL has no data
+      File f = new File(u.toURI());
+      assertTrue(f.getName()+" does not exist",f.exists());
     }
   }
   
