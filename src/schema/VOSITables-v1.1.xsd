@@ -16,7 +16,7 @@
   </xsd:annotation>
 
   <xsd:import namespace="http://www.ivoa.net/xml/VODataService/v1.1"
-              schemaLocation="./VODataService-v1.1.xsd" />
+              schemaLocation="./VODataService-v1.2.xsd" />
 
   <!--
     -  the root element for a VOSI tableset metadata

@@ -76,7 +76,7 @@ public class SchemaMap {
         ALL.put("http://www.ivoa.net/xml/SIA/v1.1",SchemaMap.class.getResource("/schema/SIA-v1.1.xsd"));        
         ALL.put("http://www.ivoa.net/xml/SkyNode/v0.2",SchemaMap.class.getResource("/schema/OpenSkyNode-v0.2.xsd"));      
         ALL.put("http://www.ivoa.net/xml/VODataService/v1.0",SchemaMap.class.getResource("/schema/VODataService-v1.0.xsd"));        
-        ALL.put("http://www.ivoa.net/xml/VODataService/v1.1",SchemaMap.class.getResource("/schema/VODataService-v1.1.xsd"));        
+        ALL.put("http://www.ivoa.net/xml/VODataService/v1.1",SchemaMap.class.getResource("/schema/VODataService-v1.2.xsd"));        
        
       	ALL.put("http://www.ivoa.net/xml/VORegistry/v1.0",SchemaMap.class.getResource("/schema/VORegistry-v1.0.xsd"));        	
        
@@ -85,7 +85,7 @@ public class SchemaMap {
       	ALL.put("http://www.ivoa.net/xml/VOApplication/v1.0rc1",SchemaMap.class.getResource("/schema/VOApplication-1.0.xsd"));
         ALL.put("http://www.ivoa.net/xml/StandardsRegExt/v1.0",SchemaMap.class.getResource("/schema/StandardsRegExt-1.0.xsd"));
 
-
+        
         ALL.put("http://www.ivoa.net/xml/TAPRegExt/v1.0",SchemaMap.class.getResource("/schema/TAPRegExt-v1.0.xsd"));
         
         ALL.put("http://www.ivoa.net/xml/SLAP/v1.0",SchemaMap.class.getResource("/schema/SLAP-v1.1.xsd"));
