@@ -65,7 +65,7 @@ public class SchemaMap {
         ALL.put("http://www.ivoa.net/xml/VOTable/v1.0",SchemaMap.class.getResource("/schema/VOTable-1.0.xsd"));
         ALL.put("http://www.ivoa.net/xml/VOTable/v1.1",SchemaMap.class.getResource("/schema/VOTable-1.1.xsd"));
         ALL.put("http://www.ivoa.net/xml/VOTable/v1.2",SchemaMap.class.getResource("/schema/VOTable-1.2.xsd"));
-        ALL.put("http://www.ivoa.net/xml/VOTable/v1.3",SchemaMap.class.getResource("/schema/VOTable-1.3.xsd"));
+        ALL.put("http://www.ivoa.net/xml/VOTable/v1.3",SchemaMap.class.getResource("/schema/VOTable-1.4.xsd"));
 
         //vo-resource-types
         ALL.put("http://www.ivoa.net/xml/ConeSearch/v1.0",SchemaMap.class.getResource("/schema/ConeSearch-v1.0.xsd"));
