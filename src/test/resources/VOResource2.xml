@@ -1,0 +1,3326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sample VOResource that tries to use most of the multiplicities available -->
+<ri:VOResources from="1" more="false" numberReturned="3"
+   xmlns:ri="http://www.ivoa.net/xml/RegistryInterface/v1.0" xmlns:vr="http://www.ivoa.net/xml/VOResource/v1.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:vs="http://www.ivoa.net/xml/VODataService/v1.1"
+             xmlns:sia="http://www.ivoa.net/xml/SIA/v1.1"
+          xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" 
+          xmlns:xlink="http://www.w3.org/1999/xlink" 
+>
+   <ri:Resource createdd="2001-12-31T12:00:00" status="active"
+      updated="2001-12-31T12:00:00" xsi:type="vr:Resource"
+   >
+      <validationLevel validatedBy="ivo://test.org/pah">0</validationLevel>
+      <validationLevel validatedBy="ivo://test.org/pah2">2</validationLevel>
+      <title>title</title>
+      <shortName>shortName</shortName>
+      <identifier>ivo://test.org/resource1</identifier>
+      <altIdentifier>myaltt</altIdentifier>
+      <altIdentifier>nyalt2</altIdentifier>
+      <curation>
+         <publisher>publisher name</publisher>
+         <creator>
+            <name ivo-id="ivo://test.org/creator">creator name1</name>            
+         </creator>
+         <creator>
+            <name ivo-id="ivo://test.org/creator2">creator name2</name>
+            
+            <logo>http://www.silly.org/logo.gif</logo>
+         </creator>
+         <contributor>contributor1</contributor>
+         <contributor ivo-id="ivo://test.org/pah">contributor2</contributor>
+         <date role="created">2001-12-31T12:00:00</date>
+         <date role="updated">2001-12-31T14:00:00</date>
+         <version>version1</version>
+         <contact>
+            <name>contact name1</name>
+            <address>3700 San Martin Drive, Baltimore, MD 21218</address>
+            <email>silly@dot.com</email>
+         </contact>
+         <contact>
+            <name ivo-id="ivo://test.org/creator2">contact name2</name>
+         </contact>
+      </curation>
+      <content>
+         <subject>subject</subject>
+         <subject>subject2</subject>
+         <description>description</description>
+         <source>source1</source>
+         <referenceURL>http://tempuri.org</referenceURL>
+         <type>Animation</type>
+         <type>Education</type>
+         <contentLevel>Amateur</contentLevel>
+         <contentLevel>General</contentLevel>
+         <relationship>
+            <relatedResource ivo-id="ivo://test.org/data">data1</relatedResource>
+            <relatedResource ivo-id="ivo://test.org/data2">data2</relatedResource>
+         </relationship>
+         <relationship>
+            <relationshipType>related-to</relationshipType>
+            <relatedResource ivo-id="ivo://test.org/collection">coll1</relatedResource>
+            <relatedResource ivo-id="ivo://test.org/collection2">coll2</relatedResource>
+         </relationship>
+      </content>
+   </ri:Resource>
+   <ri:Resource created="2001-12-31T12:00:00" status="active"
+      updated="2001-12-31T12:00:00" xsi:type="vr:Service"
+   >
+      <validationLevel validatedBy="ivo://test.org/pah">0</validationLevel>
+      <title>title</title>
+      <shortName>shortName</shortName>
+      <identifier>ivo://test.org/service1</identifier>
+      <curation>
+         <publisher ivo-id="ivo://test.org/pah">publisher name</publisher>
+         <creator>
+            <name ivo-id="ivo://test.org/creator">creator name1</name>
+         </creator>
+         <creator>
+            <name ivo-id="ivo://test.org/creator2">creator name2</name>
+            <logo>http://www.silly.org/logo.gif</logo>
+         </creator>
+         <contributor>contributor1</contributor>
+         <contributor ivo-id="ivo://test.org/pah">contributor2</contributor>
+         <date role="created">2001-12-31T12:00:00</date>
+         <date role="updated">2001-12-31T14:00:00</date>
+         <version>version1</version>
+         <contact>
+            <name>contact name1</name>
+         </contact>
+         <contact>
+            <name ivo-id="ivo://test.org/creator2">contact name2</name>
+         </contact>
+      </curation>
+      <content>
+         <subject>subject</subject>
+         <subject>subject2</subject>
+         <description>description</description>
+         <source>source1</source>
+         <referenceURL>http://tempuri.org</referenceURL>
+         <type>Animation</type>
+         <type>Education</type>
+         <contentLevel>Amateur</contentLevel>
+         <contentLevel>General</contentLevel>
+         <relationship>
+            <relationshipType>service-for</relationshipType>
+            <relatedResource ivo-id="ivo://test.org/data">data1</relatedResource>
+            <relatedResource ivo-id="ivo://test.org/data2">data2</relatedResource>
+         </relationship>
+         <relationship>
+            <relationshipType>related-to</relationshipType>
+            <relatedResource ivo-id="ivo://test.org/collection">coll1</relatedResource>
+            <relatedResource ivo-id="ivo://test.org/collection2">coll2</relatedResource>
+         </relationship>
+      </content>
+      <rights>proprietary</rights>
+      <rights>public</rights>
+      <capability standardID="ivo">
+         <validationLevel  validatedBy="ivo://test.org/pah">0</validationLevel>
+         <validationLevel validatedBy="ivo://test.org/pah2">2</validationLevel>
+         <description>cap description</description>
+         <notallowed>not allowed</notallowed>
+         <interface version="1.0" role="std" xsi:type="vr:WebBrowser">
+            <accessURL use="full">http://silly.url/dir/this.html</accessURL>
+            <accessURL use="dir">http://silly.url/dir/</accessURL>
+            <accessURL use="dir">http://silly.url/dir2/</accessURL>
+            <securityMethod standardID="ivo://ivoa.net/SSL" />
+            <!-- I think that multiple security methods might be back in -->
+<!--             <securityMethod standardID="ivo://ivoa.net/OPENID" /> -->
+         </interface>
+         <interface version="1.0" role="std" xsi:type="vr:WebBrowser">
+            <accessURL use="full">http://silly.url/dir/this.html</accessURL>
+            <accessURL use="dir">http://silly.url/dir/</accessURL>
+            <securityMethod standardID="ivo://ivoa.net/SSL" />
+<!--             <securityMethod standardID="ivo://ivoa.net/OPENID" /> -->
+         </interface>
+      </capability>
+      
+   </ri:Resource>
+      <ri:Resource created="2001-12-31T12:00:00" status="active"
+      updated="2001-12-31T12:00:00" xsi:type="vr:Organisation"
+   >
+      <validationLevel validatedBy="ivo://test.org/pah">0</validationLevel>
+      <validationLevel validatedBy="ivo://test.org/pah2">2</validationLevel>
+      <title>title</title>
+      <shortName>shortName</shortName>
+      <identifier>ivo://test.org/org1</identifier>
+      <curation>
+         <publisher ivo-id="ivo://test.org/pah">publisher name</publisher>
+         <creator>
+            <name ivo-id="ivo://test.org/creator">creator name1</name>
+         </creator>
+         <creator>
+            <name ivo-id="ivo://test.org/creator2">creator name2</name>
+            <logo>http://www.silly.org/logo.gif</logo>
+         </creator>
+         <contributor>contributor1</contributor>
+         <contributor ivo-id="ivo://test.org/pah">contributor2</contributor>
+         <date role="created">2001-12-31T12:00:00</date>
+         <date role="updated">2001-12-31T14:00:00</date>
+         <version>version1</version>
+         <contact>
+            <name>contact name1</name>
+         </contact>
+         <contact>
+            <name ivo-id="ivo://test.org/creator2">contact name2</name>
+         </contact>
+      </curation>
+      <content>
+         <subject>subject</subject>
+         <subject>subject2</subject>
+         <description>description</description>
+         <source>source1</source>
+         <referenceURL>http://tempuri.org</referenceURL>
+         <type>Animation</type>
+         <type>Education</type>
+         <contentLevel>Amateur</contentLevel>
+         <contentLevel>General</contentLevel>
+         <relationship>
+            <relationshipType>service-for</relationshipType>
+            <relatedResource ivo-id="ivo://test.org/data">data1</relatedResource>
+            <relatedResource ivo-id="ivo://test.org/data2">data2</relatedResource>
+         </relationship>
+         <relationship>
+            <relationshipType>related-to</relationshipType>
+            <relatedResource ivo-id="ivo://test.org/collection">coll1</relatedResource>
+            <relatedResource ivo-id="ivo://test.org/collection2">coll2</relatedResource>
+         </relationship>
+      </content>
+      <facility ivo-id="ivo://test.org/facility">Facility1</facility>
+      <facility ivo-id="ivo://test.org/facilit2">Facility2</facility>
+      <instrument ivo-id="ivo://test.org/instrument">Instrument1</instrument>
+     <instrument ivo-id="ivo://test.org/instrument2">Instrument2</instrument>
+     
+   </ri:Resource>
+   
+   <ri:Resource updated="2000-01-01T09:00:00" status="active" created="2000-01-01T09:00:00" xsi:type="vs:CatalogService">
+    <validationLevel validatedBy="ivo://nvo.ncsa/registry"> 2 </validationLevel>
+
+    <title>NCSA Astronomy Digital Image Library Simple Image Access</title>
+    <shortName>ADIL</shortName>
+    <identifier>ivo://adil.ncsa/sia</identifier>
+
+    <curation>
+      <publisher ivo-id="ivo://adil.ncsa/adil">
+         NCSA Astronomy Digital Image Library (ADIL)
+      </publisher>
+      <creator>
+        <name>Ramon Williamson</name>
+        <logo>http://adil.ncsa.uiuc.edu/gifs/adilfooter.gif</logo>
+      </creator>
+      <contributor>Dr. Raymond Plante</contributor>
+      <date role="created">2003-01-01</date>
+      <contact>
+        <name>ADIL Librarian</name>
+   <email>adil@ncsa.uiuc.edu</email>
+      </contact>
+    </curation>
+
+    <content>
+      <subject>data repositories</subject>
+      <subject>digital libraries</subject>
+      <description>
+         This Simple Image Access Protocol implementation allows clients to 
+         progrommatically search for images in the ADIL that overlap with 
+         the given region.  
+      </description>
+      <referenceURL>http://adil.ncsa.uiuc.edu/</referenceURL>
+      <type>Archive</type>
+      <contentLevel>University</contentLevel>
+      <contentLevel>Research</contentLevel>
+      <contentLevel>Community College</contentLevel>
+
+      <relationship>
+         <relationshipType>  service-for  </relationshipType>
+         <relatedResource ivo-id="ivo://adil.ncsa/adil">
+            NCSA Astronomy Digital Image Library
+         </relatedResource>
+      </relationship>
+    </content>
+
+    <capability xsi:type="sia:SimpleImageAccess" 
+                standardID="ivo://ivoa.net/std/SIA">
+
+      <validationLevel validatedBy="ivo://nvo.ncsa/registry">2</validationLevel>
+
+       <interface xsi:type="vs:ParamHTTP" role="std">
+          <accessURL>
+             http://adil.ncsa.uiuc.edu/cgi-bin/voimquery?survey=f&amp;
+          </accessURL>
+
+          <!-- here is a standard but optional parameter that the  service supports -->
+          <param use="optional" std="true">
+            <name>CFRAME</name>
+            <description>request to shift to a given coordinate frame.</description>
+            <dataType>string</dataType>
+          </param>
+
+          <!-- here is a site-specific parameter that this service supports -->
+          <param use="optional" std="false">
+            <name>FREQ</name>
+            <description>Frequency of observation.</description>
+            <unit>Hz</unit>
+            <dataType>real</dataType>
+          </param>
+       </interface>
+
+       <imageServiceType>Pointed</imageServiceType>
+       <maxQueryRegionSize>
+          <long>360.0</long>
+          <lat>180.0</lat>
+       </maxQueryRegionSize>
+       <maxImageExtent>
+          <long>360.0</long>
+          <lat>180.0</lat>
+       </maxImageExtent>
+       <maxImageSize>5000</maxImageSize>
+       <maxFileSize>100000000</maxFileSize>
+       <maxRecords>5000</maxRecords>
+       <testQuery>
+          <pos>
+             <long>120</long>
+             <lat>20</lat>
+          </pos>
+          <size>
+             <long>1</long>
+             <lat>1</lat>
+          </size>
+       </testQuery>
+    </capability>
+
+    <coverage>
+       <stc:STCResourceProfile
+            xmlns="http://www.ivoa.net/xml/STC/stc-v1.30.xsd">
+
+          <AstroCoordSystem xlink:type="simple"
+                            xlink:href="ivo://STClib/CoordSys#UTC-FK5-TOPO" 
+                            id="UTC-FK5-TOPO"/> 
+
+          <AstroCoordArea coord_system_id="UTC-FK5-TOPO">
+             <AllSky/>
+          </AstroCoordArea>
+
+       </stc:STCResourceProfile>
+
+       <waveband>Radio</waveband>
+       <waveband>Millimeter</waveband>
+       <waveband>Infrared</waveband>
+       <waveband>Optical</waveband>
+       <waveband>UV</waveband>
+
+    </coverage>
+
+    <tableset>
+    <schema>
+      <name>default</name>
+        <table type="output">
+           <name>default</name>
+           <column>
+              <name>Codename</name>
+              <description>
+                 ADIL Image Identifier - Unique identifier for image, as assigned 
+                 by the ADIL</description>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+           <column>
+              <name>Image Name</name>
+              <description>Image Filename, as provide by author</description>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+           <column>
+              <name>Source Name</name>
+              <description>Target Source of Image</description>
+              <ucd>ID_MAIN</ucd>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+           <column>
+              <name>RA (Center)</name>
+              <description>RA of Image Center (J2000)</description>
+              <unit>degrees</unit>
+              <ucd>POS_EQ_RA_MAIN</ucd>
+              <dataType xsi:type="vs:VOTableType">float</dataType>
+           </column>
+           <column>
+              <name>Dec (Center)</name>
+              <description>Dec of Image Center (J2000)</description>
+              <unit>degrees</unit>
+              <ucd>POS_EQ_DEC_MAIN</ucd>
+              <dataType xsi:type="vs:VOTableType">float</dataType>
+           </column>
+           <column>
+              <name>Number of Axes</name>
+              <description>Number of axes in the image</description>
+              <ucd>VOX:Image_Naxes</ucd>
+              <dataType xsi:type="vs:VOTableType">int</dataType>
+           </column>
+           <column>
+              <name>Naxis</name>
+              <description>Size of Image for each dimension</description>
+              <ucd>VOX:Image_Naxis</ucd>
+              <dataType xsi:type="vs:VOTableType">int</dataType>
+           </column>
+           <column>
+              <name>Scale</name>
+              <description>Scale of Image</description>
+              <unit>degrees/pixel</unit>
+              <ucd>VOX:Image_Scale</ucd>
+              <dataType xsi:type="vs:VOTableType">double</dataType>
+           </column>
+           <column>
+              <name>Image Format</name>
+              <description>Format of Image</description>
+              <ucd>VOX:Image_Format</ucd>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+           <column>
+              <name>Central Frequency</name>
+              <description>Frequency at center of the image wavehand</description>
+              <unit>Hz</unit>
+              <ucd>VOX:BandPass_RefValue</ucd>
+              <dataType xsi:type="vs:VOTableType">double</dataType>
+           </column>
+           <column>
+              <name>Description</name>
+              <description>Image Description</description>
+              <ucd>VOX:Image_Title</ucd>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+           <column>
+              <name>Source Types</name>
+              <description>a list of Source Types associated with this image</description>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+           <column>
+              <name>Telescopes</name>
+              <description>a list of Telescopes used to create this image</description>
+              <ucd>TEL_ID</ucd>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+           <column>
+              <name>Observation Epoch</name>
+              <description>Upper bound on the epoch of the observations</description>
+              <unit>years</unit>
+              <ucd>NVOX:Image_Epoch</ucd>
+              <dataType xsi:type="vs:VOTableType">double</dataType>
+           </column>
+           <column>
+              <name>URL</name>
+              <description>The URL for downloading image</description>
+              <ucd>VOX:Image_AccessReference</ucd>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+        </table>
+      </schema>
+     <schema>
+      <name>rr</name>
+      <title>The GAVO Relational VO Registry</title>
+      <description>Tables containing the information in the IVOA
+         registry. To query these tables, use `our TAP service`_. For
+         more information and example queries, see the `RegTAP
+         specification`_. .. _our TAP service: /__system__/tap/run/info
+         .. _RegTAP specification: http://www.ivoa.net/documents/RegTAP/
+      </description>
+      <utype>ivo://ivoa.net/std/RegTAP#1.1</utype>
+      <table>
+         <name>rr.registries</name>
+         <description>Administrative table: publishing registries we
+            harvest, together with the dates of last full and
+            incremental harvests.
+         </description>
+         <utype>ivo://ivoa.net/std/RegTAP#1.1</utype>
+         <column>
+            <name>ivoid</name>
+            <description>IVOID of the registry.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>accessurl</name>
+            <description>URL of the registry's OAI-PMH endpoint.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>title</name>
+            <description>Name of the registry.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>last_full_harvest</name>
+            <description>Date and time of the last full harvest of the
+               registry.</description>
+            <dataType arraysize="19" extendedType="timestamp"
+               xsi:type="vs:VOTableType"
+            >char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>last_inc_harvest</name>
+            <description>Date and time of the last incremental harvest
+               of the registry.</description>
+            <dataType arraysize="19" extendedType="timestamp"
+               xsi:type="vs:VOTableType"
+            >char</dataType>
+            <flag>nullable</flag>
+         </column>
+      </table>
+      <table>
+         <name>rr.authorities</name>
+         <description>A mapping between the registries and the
+            authorities they claim to manage.
+         </description>
+         <utype>ivo://ivoa.net/std/RegTAP#1.1</utype>
+         <column>
+            <name>ivoid</name>
+            <description>IVOID of the registry.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>managed_authority</name>
+            <description>An authority this registry claims to serve.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.registries</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.resource</name>
+         <description>The resources (like services, data collections,
+            organizations) present in this registry.
+         </description>
+         <utype>xpath:/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>Unambiguous reference to the resource
+               conforming to the IVOA standard for identifiers.</description>
+            <utype>xpath:identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>res_type</name>
+            <description>Resource type (something like
+               vs:datacollection, vs:catalogservice, etc).</description>
+            <utype>xpath:@xsi:type</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>created</name>
+            <description>The UTC date and time this resource metadata
+               description was created.</description>
+            <utype>xpath:@created</utype>
+            <dataType arraysize="19" extendedType="timestamp"
+               xsi:type="vs:VOTableType"
+            >char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>short_name</name>
+            <description>A short name or abbreviation given to
+               something, for presentation in space-constrained fields
+               (up to 16 characters).</description>
+            <utype>xpath:shortName</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>res_title</name>
+            <description>The full name given to the resource.</description>
+            <utype>xpath:title</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>updated</name>
+            <description>The UTC date this resource metadata description
+               was last updated.</description>
+            <utype>xpath:@updated</utype>
+            <dataType arraysize="19" extendedType="timestamp"
+               xsi:type="vs:VOTableType"
+            >char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>content_level</name>
+            <description>A hash-separated list of content levels
+               specifying the intended audience.</description>
+            <utype>xpath:content/contentLevel</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>res_description</name>
+            <description>An account of the nature of the resource.</description>
+            <utype>xpath:content/description</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>reference_url</name>
+            <description>URL pointing to a human-readable document
+               describing this resource.</description>
+            <utype>xpath:content/referenceURL</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>creator_seq</name>
+            <description>The creator(s) of the resource in the order
+               given by the resource record author, separated by
+               semicolons.</description>
+            <utype>xpath:curation/creator/name</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>content_type</name>
+            <description>A hash-separated list of natures or genres of
+               the content of the resource.</description>
+            <utype>xpath:content/type</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>source_format</name>
+            <description>The format of source_value. This, in
+               particular, can be ``bibcode''.</description>
+            <utype>xpath:content/source/@format</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>source_value</name>
+            <description>A bibliographic reference from which the
+               present resource is derived or extracted.</description>
+            <utype>xpath:content/source</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>res_version</name>
+            <description>Label associated with creation or availablilty
+               of a version of a resource.</description>
+            <utype>xpath:curation/version</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>region_of_regard</name>
+            <description>A single numeric value representing the angle,
+               given in decimal degrees, by which a positional query
+               against this resource should be ``blurred'' in order to
+               get an appropriate match.</description>
+            <unit>deg</unit>
+            <utype>xpath:coverage/regionOfRegard</utype>
+            <dataType xsi:type="vs:VOTableType">float</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>waveband</name>
+            <description>A hash-separated list of regions of the
+               electro-magnetic spectrum that the resource's spectral
+               coverage overlaps with.</description>
+            <utype>xpath:coverage/waveband</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>rights</name>
+            <description>A statement of usage conditions (license,
+               attribution, embargo, etc).</description>
+            <utype>xpath:/rights</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>rights_uri</name>
+            <description>A URI identifying a license the data is made
+               available under.</description>
+            <utype>xpath:/rights/@rightsURI</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>harvested_from</name>
+            <description>IVOID of the registry this record came from.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.registries</targetTable>
+            <fkColumn>
+               <fromColumn>harvested_from</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.res_role</name>
+         <description>Entities (persons or organizations) operating on
+            resources: creators, contacts, publishers, contributors.
+         </description>
+         <utype>ivo://ivoa.net/std/RegTAP#1.1</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>role_name</name>
+            <description>The real-world name or title of a person or
+               organization.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>role_ivoid</name>
+            <description>An IVOA identifier of a person or organization.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>street_address</name>
+            <description>A mailing address for a person or organization.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>email</name>
+            <description>An email address the entity can be reached at.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>telephone</name>
+            <description>A telephone number the entity can be reached
+               at.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>logo</name>
+            <description>URL pointing to a graphical logo, which may be
+               used to help identify the entity.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>base_role</name>
+            <description>The role played by this entity; this is one of
+               contact, publisher, contributor, or creator.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.res_subject</name>
+         <description>Topics, object types, or other descriptive
+            keywords about the resource.
+         </description>
+         <utype>xpath:/content/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>res_subject</name>
+            <description>Topics, object types, or other descriptive
+               keywords about the resource.</description>
+            <utype>xpath:subject</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.capability</name>
+         <description>Pieces of behaviour of a resource.</description>
+         <utype>xpath:/capability/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>cap_index</name>
+            <description>An arbitrary identifier of this capability
+               within the resource.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>cap_type</name>
+            <description>The type of capability covered here. If looking
+               for endpoints implementing a certain standard, you should
+               not use this column but rather match against standard_id.</description>
+            <utype>xpath:@xsi:type</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>cap_description</name>
+            <description>A human-readable description of what this
+               capability provides as part of the over-all service.</description>
+            <utype>xpath:description</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>standard_id</name>
+            <description>A URI for a standard this capability conforms
+               to.</description>
+            <utype>xpath:@standardID</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.res_schema</name>
+         <description>Sets of tables related to resources.</description>
+         <utype>xpath:/tableset/schema/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>schema_index</name>
+            <description>An arbitrary identifier for the res_schema rows
+               belonging to a resource.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>schema_description</name>
+            <description>A free text description of the tableset
+               explaining in general how all of the tables are related.</description>
+            <utype>xpath:description</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>schema_name</name>
+            <description>A name for the set of tables.</description>
+            <utype>xpath:name</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>schema_title</name>
+            <description>A descriptive, human-interpretable name for the
+               table set.</description>
+            <utype>xpath:title</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>schema_utype</name>
+            <description>An identifier for a concept in a data model
+               that the data in this schema as a whole represent.</description>
+            <utype>xpath:utype</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.res_table</name>
+         <description>(Relational) tables that are part of schemata or
+            resources.</description>
+         <utype>xpath:/(tableset/schema/|)table/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>schema_index</name>
+            <description>Index of the schema this table belongs to, if
+               it belongs to a schema (otherwise NULL).</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>table_description</name>
+            <description>A free-text description of the table's
+               contents.</description>
+            <utype>xpath:description</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>table_name</name>
+            <description>The fully qualified name of the table. This
+               name should include all catalog or schema prefixes needed
+               to distinguish it in a query.</description>
+            <utype>xpath:name</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>table_index</name>
+            <description>An arbitrary identifier for the tables
+               belonging to a resource.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>table_title</name>
+            <description>A descriptive, human-interpretable name for the
+               table.</description>
+            <utype>xpath:title</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>table_type</name>
+            <description>A name for the role this table plays.
+               Recognized values include "output", indicating this table
+               is output from a query; "base_table", indicating a table
+               whose records represent the main subjects of its schema;
+               and "view", indicating that the table represents a useful
+               combination or subset of other tables. Other values are
+               allowed.</description>
+            <utype>xpath:@type</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>table_utype</name>
+            <description>An identifier for a concept in a data model
+               that the data in this table as a whole represent.</description>
+            <utype>xpath:utype</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.table_column</name>
+         <description>Metadata on columns of a resource's tables.</description>
+         <utype>xpath:/(tableset/schema/|)/table/column/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>table_index</name>
+            <description>Index of the table this column belongs to.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+         </column>
+         <column>
+            <name>name</name>
+            <description>The name of the column.</description>
+            <utype>xpath:name</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>ucd</name>
+            <description>A unified content descriptor that describes the
+               scientific content of the column.</description>
+            <utype>xpath:ucd</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>unit</name>
+            <description>The unit associated with all values in the
+               column.</description>
+            <utype>xpath:unit</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>utype</name>
+            <description>An identifier for a role in a data model that
+               the data in this column represents.</description>
+            <utype>xpath:utype</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>std</name>
+            <description>If 1, the meaning and use of this column is
+               reserved and defined by a standard model. If 0, it
+               represents a database-specific column that effectively
+               extends beyond the standard.</description>
+            <utype>xpath:@std</utype>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>datatype</name>
+            <description>The type of the data contained in the column.</description>
+            <utype>xpath:dataType</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>extended_schema</name>
+            <description>An identifier for the schema that the value
+               given by the extended attribute is drawn from.</description>
+            <utype>xpath:dataType/@extendedSchema</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>extended_type</name>
+            <description>A custom type for the values this column
+               contains.</description>
+            <utype>xpath:dataType/@extendedType</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>arraysize</name>
+            <description>The shape of the array that constitutes the
+               value, e.g., 4, *, 4*, 5x4, or 5x*, as specified by
+               VOTable.</description>
+            <utype>xpath:dataType/@arraysize</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>delim</name>
+            <description>The string that is used to delimit elements of
+               an array value when arraysize is not '1'.</description>
+            <utype>xpath:dataType/@delim</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>type_system</name>
+            <description>The type system used, as a QName with a
+               canonical prefix; this will ususally be one of
+               vs:simpledatatype, vs:votabletype, and vs:taptype.</description>
+            <utype>xpath:dataType/@xsi:type</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>flag</name>
+            <description>Hash-separated keywords representing traits of
+               the column. Recognized values include "indexed",
+               "primary", and "nullable".</description>
+            <utype>xpath:flag</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>column_description</name>
+            <description>A free-text description of the column's
+               contents.</description>
+            <utype>xpath:description</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.res_table</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+            <fkColumn>
+               <fromColumn>table_index</fromColumn>
+               <targetColumn>table_index</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.res_detail</name>
+         <description>XPath-value pairs for members of resource or
+            capability and their derivations that are less used and/or
+            from VOResource extensions. The pairs refer to a resource if
+            cap_index is NULL, to the referenced capability otherwise.
+         </description>
+         <utype>ivo://ivoa.net/std/RegTAP#1.1</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>cap_index</name>
+            <description>The index of the parent capability; if NULL the
+               xpath-value pair describes a member of the entire
+               resource.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>detail_xpath</name>
+            <description>The xpath of the data item.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>detail_value</name>
+            <description>(Atomic) value of the member.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.interface</name>
+         <description>Information on access modes of a capability.</description>
+         <utype>xpath:/capability/interface/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>cap_index</name>
+            <description>The index of the parent capability.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>indexed</flag>
+         </column>
+         <column>
+            <name>intf_index</name>
+            <description>An arbitrary identifier for the interfaces of a
+               resource.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>intf_type</name>
+            <description>The type of the interface (vr:webbrowser,
+               vs:paramhttp, etc).</description>
+            <utype>xpath:@xsi:type</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>intf_role</name>
+            <description>An identifier for the role the interface plays
+               in the particular capability. If the value is equal to
+               "std" or begins with "std:", then the interface refers to
+               a standard interface defined by the standard referred to
+               by the capability's standardID attribute.</description>
+            <utype>xpath:@role</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>std_version</name>
+            <description>The version of a standard interface
+               specification that this interface complies with. When the
+               interface is provided in the context of a Capability
+               element, then the standard being refered to is the one
+               identified by the Capability's standardID element.</description>
+            <utype>xpath:@version</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>query_type</name>
+            <description>Hash-joined list of expected HTTP method (get
+               or post) supported by the service.</description>
+            <utype>xpath:queryType</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>result_type</name>
+            <description>The MIME type of a document returned in the
+               HTTP response.</description>
+            <utype>xpath:resultType</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>wsdl_url</name>
+            <description>The location of the WSDL that describes this
+               Web Service. If NULL, the location can be assumed to be
+               the accessURL with '?wsdl' appended.</description>
+            <utype>xpath:wsdlURL</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>url_use</name>
+            <description>A flag indicating whether this should be
+               interpreted as a base URL ('base'), a full URL ('full'),
+               or a URL to a directory that will produce a listing of
+               files ('dir').</description>
+            <utype>xpath:accessURL/@use</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>access_url</name>
+            <description>The URL at which the interface is found.</description>
+            <utype>xpath:accessURL</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>mirror_url</name>
+            <description>Secondary access URLs of this interface,
+               separated by hash characters.</description>
+            <utype>xpath:mirrorURL</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>authenticated_only</name>
+            <description>A flag for whether an interface is available
+               for anonymous use (=0) or only authenticated clients are
+               served (=1).</description>
+            <utype>xpath:securityMethod</utype>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+         </column>
+         <column>
+            <name>security_method_id</name>
+            <description>This column was mentioned in drafts of RegTAP
+               1.1 but was abandoned before RegTAP 1.1 REC. Do not use
+               any more. This is just here to avoid a flag day for
+               clients that experimentally used this column. This is
+               always NULL here.</description>
+            <utype>not mapped</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.capability</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+            <fkColumn>
+               <fromColumn>cap_index</fromColumn>
+               <targetColumn>cap_index</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.relationship</name>
+         <description>Relationships between resources (like mirroring,
+            derivation, serving a data collection).
+         </description>
+         <utype>xpath:/content/relationship/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>relationship_type</name>
+            <description>The type of the relationship; these terms are
+               drawn from a controlled vocabulary and are
+               DataCite-compatible.</description>
+            <utype>xpath:relationshipType</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>related_id</name>
+            <description>The IVOA identifier for the resource referred
+               to.</description>
+            <utype>xpath:relatedResource/@ivo-id</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>related_name</name>
+            <description>The name of resource that this resource is
+               related to.</description>
+            <utype>xpath:relatedResource</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.intf_param</name>
+         <description>Input parameters for services.</description>
+         <utype>xpath:/capability/interface/param/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>intf_index</name>
+            <description>The index of the interface this parameter
+               belongs to.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+         </column>
+         <column>
+            <name>name</name>
+            <description>The name of the parameter.</description>
+            <utype>xpath:name</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>ucd</name>
+            <description>A unified content descriptor that describes the
+               scientific content of the parameter.</description>
+            <utype>xpath:ucd</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>unit</name>
+            <description>The unit associated with all values in the
+               parameter.</description>
+            <utype>xpath:unit</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>utype</name>
+            <description>An identifier for a role in a data model that
+               the data in this parameter represents.</description>
+            <utype>xpath:utype</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>std</name>
+            <description>If 1, the meaning and use of this parameter is
+               reserved and defined by a standard model. If 0, it
+               represents a database-specific parameter that effectively
+               extends beyond the standard.</description>
+            <utype>xpath:@std</utype>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>datatype</name>
+            <description>The type of the data contained in the
+               parameter.</description>
+            <utype>xpath:dataType</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>extended_schema</name>
+            <description>An identifier for the schema that the value
+               given by the extended attribute is drawn from.</description>
+            <utype>xpath:dataType/@extendedSchema</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>extended_type</name>
+            <description>A custom type for the values this parameter
+               contains.</description>
+            <utype>xpath:dataType/@extendedType</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>arraysize</name>
+            <description>The shape of the array that constitutes the
+               value, e.g., 4, *, 4*, 5x4, or 5x*, as specified by
+               VOTable.</description>
+            <utype>xpath:dataType/@arraysize</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>delim</name>
+            <description>The string that is used to delimit elements of
+               an array value when arraysize is not '1'.</description>
+            <utype>xpath:dataType/@delim</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>param_use</name>
+            <description>An indication of whether this parameter is
+               required to be provided for the application or service to
+               work properly (one of required, optional, ignored, or
+               NULL).</description>
+            <utype>xpath:@use</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>param_description</name>
+            <description>A free-text description of the parameter's
+               contents.</description>
+            <utype>xpath:description</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.interface</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+            <fkColumn>
+               <fromColumn>intf_index</fromColumn>
+               <targetColumn>intf_index</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.validation</name>
+         <description>Validation levels for resources and capabilities.</description>
+         <utype>xpath:/(capability/|)validationLevel</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>validated_by</name>
+            <description>The IVOA ID of the registry or organisation
+               that assigned the validation level.</description>
+            <utype>xpath:validationLevel/@validatedBy</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>val_level</name>
+            <description>A numeric grade describing the quality of the
+               resource description, when applicable, to be used to
+               indicate the confidence an end-user can put in the
+               resource as part of a VO application or research study.</description>
+            <utype>xpath:validationLevel</utype>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>cap_index</name>
+            <description>If non-NULL, the validation only refers to the
+               capability referenced here.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.res_date</name>
+         <description>A date associated with an event in the life cycle
+            of the resource. This could be creation or update. The role
+            column can be used to clarify.
+         </description>
+         <utype>xpath:/curation/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>date_value</name>
+            <description>A date associated with an event in the life
+               cycle of the resource.</description>
+            <utype>xpath:date</utype>
+            <dataType arraysize="19" extendedType="timestamp"
+               xsi:type="vs:VOTableType"
+            >char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>value_role</name>
+            <description>A string indicating what the date refers to,
+               e.g., created, availability, updated. This value is
+               generally drawn from a controlled vocabulary.</description>
+            <utype>xpath:date/@role</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.alt_identifier</name>
+         <description>An alternate identifier associated with this
+            record. This can be a resiource identifier like a DOI (in
+            URI form, e.g., doi:10.1016/j.epsl.2011.11.037), or a person
+            identifier of a creator (typically an ORCID in URI form,
+            e.g., orcid:000-0000-0000-000X).
+         </description>
+         <utype>xpath:/(curation/creator/|)altIdentifier</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>alt_identifier</name>
+            <description>An identifier for the resource or an entity
+               related to the resource in URI form.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.stc_spatial</name>
+         <description>The spatial coverage of resources. This table
+            associates footprints (ADQL geometries) with ivoids. The
+            footprints are intended for resource discovery; a reasonable
+            expectation for the resolution thus is something like a
+            degree.
+         </description>
+         <utype>stc:AstroCoordArea.Region</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>coverage</name>
+            <description>A geometry representing the area a resource
+               contains data for; this should be tight at least with a
+               resolution of degrees.</description>
+            <ucd>pos</ucd>
+            <dataType arraysize="*" extendedType="moc"
+               xsi:type="vs:VOTableType"
+            >char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>ref_system_name</name>
+            <description>The reference frame coverage is written in.
+               This is currently reserved and fixed to NULL. Clients
+               should always add a constraint to NULL for this to avoid
+               matching non-celestial services later.</description>
+            <ucd>pos.frame</ucd>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.stc_temporal</name>
+         <description>The temporal coverage of resources, given as one
+            or more intervals; the total coverage is (a subset of) the
+            union of all intervals given for a resource. All times are
+            understood as MJD for TDB at the solar system barycenter.
+         </description>
+         <utype>stc:AstroCoordArea.TimeInterval</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>time_start</name>
+            <description>Lower limit of a time interval covered by the
+               resource.</description>
+            <unit>d</unit>
+            <utype>stc:AstroCoordArea.TimeInterval.StartTime</utype>
+            <dataType xsi:type="vs:VOTableType">float</dataType>
+         </column>
+         <column>
+            <name>time_end</name>
+            <description>Upper limit of a time interval covered by the
+               resource.</description>
+            <unit>d</unit>
+            <utype>stc:AstroCoordArea.TimeInterval.EndTime</utype>
+            <dataType xsi:type="vs:VOTableType">float</dataType>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.stc_spectral</name>
+         <description>The spectral coverage of resources, given as one
+            or more intervals; the total coverage is (a subset of) the
+            union of all intervals given for a resource. All spectral
+            values are understood as given as wavelength in meters; they
+            are supposed to express wavelength at the barycenter of the
+            solar system (which means instrument values should be close
+            enough to work).
+         </description>
+         <utype>stc:AstroCoordArea.SpectralInterval</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>wavelength_start</name>
+            <description>Lower limit of a vacuum wavelength interval
+               covered by the resource (for the solar system
+               barycenter).</description>
+            <unit>m</unit>
+            <utype>stc:AstroCoordArea.SpectralInterval.LoLimit</utype>
+            <dataType xsi:type="vs:VOTableType">float</dataType>
+         </column>
+         <column>
+            <name>wavelength_end</name>
+            <description>Upper limit of a vacuum wavelength interval
+               covered by the resource (for the solar system
+               barycenter).</description>
+            <unit>m</unit>
+            <utype>stc:AstroCoordArea.SpectralInterval.HiLimit</utype>
+            <dataType xsi:type="vs:VOTableType">float</dataType>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.stc_redshift</name>
+         <description>The redshift coverage of resources, given as one
+            or more intervals; the total coverage is (a subset of) the
+            union of all intervals given for a resource. Redshifts here
+            are understood as delta lambda/lamda.
+         </description>
+         <utype>stc:AstroCoordArea.SpectralInterval</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>redshift_start</name>
+            <description>Lower limit of a redshift interval covered by
+               the resource.</description>
+            <utype>stc:AstroCoordArea.RedshiftInterval.LoLimit</utype>
+            <dataType xsi:type="vs:VOTableType">float</dataType>
+         </column>
+         <column>
+            <name>redshift_end</name>
+            <description>Upper limit of a redshift interval covered by
+               the resource.</description>
+            <utype>stc:AstroCoordArea.RedshiftInterval.LoLimit</utype>
+            <dataType xsi:type="vs:VOTableType">float</dataType>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+   </schema>
+    </tableset>
+    
+   </ri:Resource>
+   <ri:Resource updated="2000-01-01T09:00:00" status="active" created="2000-01-01T09:00:00" xsi:type="vs:CatalogService">
+    <validationLevel validatedBy="ivo://nvo.ncsa/registry"> 2 </validationLevel>
+
+    <title>NCSA Astronomy Digital Image Library Simple Image Access (copy)</title>
+    <shortName>ADIL</shortName>
+    <identifier>ivo://adil.ncsa/sia2</identifier>
+
+    <curation>
+      <publisher ivo-id="ivo://adil.ncsa/adil">
+         NCSA Astronomy Digital Image Library (ADIL)
+      </publisher>
+      <creator>
+        <name>Ramon Williamson</name>
+        <logo>http://adil.ncsa.uiuc.edu/gifs/adilfooter.gif</logo>
+      </creator>
+      <contributor>Dr. Raymond Plante</contributor>
+      <date role="created">2003-01-01</date>
+      <contact>
+        <name>ADIL Librarian</name>
+   <email>adil@ncsa.uiuc.edu</email>
+      </contact>
+    </curation>
+
+    <content>
+      <subject>data repositories</subject>
+      <subject>digital libraries</subject>
+      <description>
+         This is a copy of the resource above with only a different identify to test that it is read properly 
+      </description>
+      <referenceURL>http://adil.ncsa.uiuc.edu/</referenceURL>
+      <type>Archive</type>
+      <contentLevel>University</contentLevel>
+      <contentLevel>Research</contentLevel>
+      <contentLevel>Community College</contentLevel>
+
+      <relationship>
+         <relationshipType>  service-for  </relationshipType>
+         <relatedResource ivo-id="ivo://adil.ncsa/adil">
+            NCSA Astronomy Digital Image Library
+         </relatedResource>
+      </relationship>
+    </content>
+
+    <capability xsi:type="sia:SimpleImageAccess" 
+                standardID="ivo://ivoa.net/std/SIA">
+
+      <validationLevel validatedBy="ivo://nvo.ncsa/registry">2</validationLevel>
+
+       <interface xsi:type="vs:ParamHTTP" role="std">
+          <accessURL>
+             http://adil.ncsa.uiuc.edu/cgi-bin/voimquery?survey=f&amp;
+          </accessURL>
+
+          <!-- here is a standard but optional parameter that the  service supports -->
+          <param use="optional" std="true">
+            <name>CFRAME</name>
+            <description>request to shift to a given coordinate frame.</description>
+            <dataType>string</dataType>
+          </param>
+
+          <!-- here is a site-specific parameter that this service supports -->
+          <param use="optional" std="false">
+            <name>FREQ</name>
+            <description>Frequency of observation.</description>
+            <unit>Hz</unit>
+            <dataType>real</dataType>
+          </param>
+       </interface>
+
+       <imageServiceType>Pointed</imageServiceType>
+       <maxQueryRegionSize>
+          <long>360.0</long>
+          <lat>180.0</lat>
+       </maxQueryRegionSize>
+       <maxImageExtent>
+          <long>360.0</long>
+          <lat>180.0</lat>
+       </maxImageExtent>
+       <maxImageSize>5000</maxImageSize>
+       <maxFileSize>100000000</maxFileSize>
+       <maxRecords>5000</maxRecords>
+       <testQuery>
+          <pos>
+             <long>120</long>
+             <lat>20</lat>
+          </pos>
+          <size>
+             <long>1</long>
+             <lat>1</lat>
+          </size>
+       </testQuery>
+    </capability>
+
+    <coverage>
+       <stc:STCResourceProfile
+            xmlns="http://www.ivoa.net/xml/STC/stc-v1.30.xsd">
+
+          <AstroCoordSystem xlink:type="simple"
+                            xlink:href="ivo://STClib/CoordSys#UTC-FK5-TOPO" 
+                            id="UTC-FK5-TOPO2"/> 
+<!-- Ugly STC wart - cannot just cut and paste -->
+          <AstroCoordArea coord_system_id="UTC-FK5-TOPO2">
+             <AllSky/>
+          </AstroCoordArea>
+
+       </stc:STCResourceProfile>
+
+       <waveband>Radio</waveband>
+       <waveband>Millimeter</waveband>
+       <waveband>Infrared</waveband>
+       <waveband>Optical</waveband>
+       <waveband>UV</waveband>
+
+    </coverage>
+
+    <tableset>
+    <schema>
+      <name>default</name>
+        <table type="output">
+           <name>default</name>
+           <column>
+              <name>Codename</name>
+              <description>
+                 ADIL Image Identifier - Unique identifier for image, as assigned 
+                 by the ADIL</description>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+           <column>
+              <name>Image Name</name>
+              <description>Image Filename, as provide by author</description>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+           <column>
+              <name>Source Name</name>
+              <description>Target Source of Image</description>
+              <ucd>ID_MAIN</ucd>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+           <column>
+              <name>RA (Center)</name>
+              <description>RA of Image Center (J2000)</description>
+              <unit>degrees</unit>
+              <ucd>POS_EQ_RA_MAIN</ucd>
+              <dataType xsi:type="vs:VOTableType">float</dataType>
+           </column>
+           <column>
+              <name>Dec (Center)</name>
+              <description>Dec of Image Center (J2000)</description>
+              <unit>degrees</unit>
+              <ucd>POS_EQ_DEC_MAIN</ucd>
+              <dataType xsi:type="vs:VOTableType">float</dataType>
+           </column>
+           <column>
+              <name>Number of Axes</name>
+              <description>Number of axes in the image</description>
+              <ucd>VOX:Image_Naxes</ucd>
+              <dataType xsi:type="vs:VOTableType">int</dataType>
+           </column>
+           <column>
+              <name>Naxis</name>
+              <description>Size of Image for each dimension</description>
+              <ucd>VOX:Image_Naxis</ucd>
+              <dataType xsi:type="vs:VOTableType">int</dataType>
+           </column>
+           <column>
+              <name>Scale</name>
+              <description>Scale of Image</description>
+              <unit>degrees/pixel</unit>
+              <ucd>VOX:Image_Scale</ucd>
+              <dataType xsi:type="vs:VOTableType">double</dataType>
+           </column>
+           <column>
+              <name>Image Format</name>
+              <description>Format of Image</description>
+              <ucd>VOX:Image_Format</ucd>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+           <column>
+              <name>Central Frequency</name>
+              <description>Frequency at center of the image wavehand</description>
+              <unit>Hz</unit>
+              <ucd>VOX:BandPass_RefValue</ucd>
+              <dataType xsi:type="vs:VOTableType">double</dataType>
+           </column>
+           <column>
+              <name>Description</name>
+              <description>Image Description</description>
+              <ucd>VOX:Image_Title</ucd>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+           <column>
+              <name>Source Types</name>
+              <description>a list of Source Types associated with this image</description>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+           <column>
+              <name>Telescopes</name>
+              <description>a list of Telescopes used to create this image</description>
+              <ucd>TEL_ID</ucd>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+           <column>
+              <name>Observation Epoch</name>
+              <description>Upper bound on the epoch of the observations</description>
+              <unit>years</unit>
+              <ucd>NVOX:Image_Epoch</ucd>
+              <dataType xsi:type="vs:VOTableType">double</dataType>
+           </column>
+           <column>
+              <name>URL</name>
+              <description>The URL for downloading image</description>
+              <ucd>VOX:Image_AccessReference</ucd>
+              <dataType xsi:type="vs:VOTableType" arraysize="*">char</dataType>
+           </column>
+        </table>
+      </schema>
+     <schema>
+      <name>rr</name>
+      <title>The GAVO Relational VO Registry</title>
+      <description>Tables containing the information in the IVOA
+         registry. To query these tables, use `our TAP service`_. For
+         more information and example queries, see the `RegTAP
+         specification`_. .. _our TAP service: /__system__/tap/run/info
+         .. _RegTAP specification: http://www.ivoa.net/documents/RegTAP/
+      </description>
+      <utype>ivo://ivoa.net/std/RegTAP#1.1</utype>
+      <table>
+         <name>rr.registries</name>
+         <description>Administrative table: publishing registries we
+            harvest, together with the dates of last full and
+            incremental harvests.
+         </description>
+         <utype>ivo://ivoa.net/std/RegTAP#1.1</utype>
+         <column>
+            <name>ivoid</name>
+            <description>IVOID of the registry.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>accessurl</name>
+            <description>URL of the registry's OAI-PMH endpoint.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>title</name>
+            <description>Name of the registry.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>last_full_harvest</name>
+            <description>Date and time of the last full harvest of the
+               registry.</description>
+            <dataType arraysize="19" extendedType="timestamp"
+               xsi:type="vs:VOTableType"
+            >char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>last_inc_harvest</name>
+            <description>Date and time of the last incremental harvest
+               of the registry.</description>
+            <dataType arraysize="19" extendedType="timestamp"
+               xsi:type="vs:VOTableType"
+            >char</dataType>
+            <flag>nullable</flag>
+         </column>
+      </table>
+      <table>
+         <name>rr.authorities</name>
+         <description>A mapping between the registries and the
+            authorities they claim to manage.
+         </description>
+         <utype>ivo://ivoa.net/std/RegTAP#1.1</utype>
+         <column>
+            <name>ivoid</name>
+            <description>IVOID of the registry.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>managed_authority</name>
+            <description>An authority this registry claims to serve.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.registries</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.resource</name>
+         <description>The resources (like services, data collections,
+            organizations) present in this registry.
+         </description>
+         <utype>xpath:/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>Unambiguous reference to the resource
+               conforming to the IVOA standard for identifiers.</description>
+            <utype>xpath:identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>res_type</name>
+            <description>Resource type (something like
+               vs:datacollection, vs:catalogservice, etc).</description>
+            <utype>xpath:@xsi:type</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>created</name>
+            <description>The UTC date and time this resource metadata
+               description was created.</description>
+            <utype>xpath:@created</utype>
+            <dataType arraysize="19" extendedType="timestamp"
+               xsi:type="vs:VOTableType"
+            >char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>short_name</name>
+            <description>A short name or abbreviation given to
+               something, for presentation in space-constrained fields
+               (up to 16 characters).</description>
+            <utype>xpath:shortName</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>res_title</name>
+            <description>The full name given to the resource.</description>
+            <utype>xpath:title</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>updated</name>
+            <description>The UTC date this resource metadata description
+               was last updated.</description>
+            <utype>xpath:@updated</utype>
+            <dataType arraysize="19" extendedType="timestamp"
+               xsi:type="vs:VOTableType"
+            >char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>content_level</name>
+            <description>A hash-separated list of content levels
+               specifying the intended audience.</description>
+            <utype>xpath:content/contentLevel</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>res_description</name>
+            <description>An account of the nature of the resource.</description>
+            <utype>xpath:content/description</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>reference_url</name>
+            <description>URL pointing to a human-readable document
+               describing this resource.</description>
+            <utype>xpath:content/referenceURL</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>creator_seq</name>
+            <description>The creator(s) of the resource in the order
+               given by the resource record author, separated by
+               semicolons.</description>
+            <utype>xpath:curation/creator/name</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>content_type</name>
+            <description>A hash-separated list of natures or genres of
+               the content of the resource.</description>
+            <utype>xpath:content/type</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>source_format</name>
+            <description>The format of source_value. This, in
+               particular, can be ``bibcode''.</description>
+            <utype>xpath:content/source/@format</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>source_value</name>
+            <description>A bibliographic reference from which the
+               present resource is derived or extracted.</description>
+            <utype>xpath:content/source</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>res_version</name>
+            <description>Label associated with creation or availablilty
+               of a version of a resource.</description>
+            <utype>xpath:curation/version</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>region_of_regard</name>
+            <description>A single numeric value representing the angle,
+               given in decimal degrees, by which a positional query
+               against this resource should be ``blurred'' in order to
+               get an appropriate match.</description>
+            <unit>deg</unit>
+            <utype>xpath:coverage/regionOfRegard</utype>
+            <dataType xsi:type="vs:VOTableType">float</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>waveband</name>
+            <description>A hash-separated list of regions of the
+               electro-magnetic spectrum that the resource's spectral
+               coverage overlaps with.</description>
+            <utype>xpath:coverage/waveband</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>rights</name>
+            <description>A statement of usage conditions (license,
+               attribution, embargo, etc).</description>
+            <utype>xpath:/rights</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>rights_uri</name>
+            <description>A URI identifying a license the data is made
+               available under.</description>
+            <utype>xpath:/rights/@rightsURI</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>harvested_from</name>
+            <description>IVOID of the registry this record came from.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.registries</targetTable>
+            <fkColumn>
+               <fromColumn>harvested_from</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.res_role</name>
+         <description>Entities (persons or organizations) operating on
+            resources: creators, contacts, publishers, contributors.
+         </description>
+         <utype>ivo://ivoa.net/std/RegTAP#1.1</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>role_name</name>
+            <description>The real-world name or title of a person or
+               organization.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>role_ivoid</name>
+            <description>An IVOA identifier of a person or organization.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>street_address</name>
+            <description>A mailing address for a person or organization.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>email</name>
+            <description>An email address the entity can be reached at.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>telephone</name>
+            <description>A telephone number the entity can be reached
+               at.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>logo</name>
+            <description>URL pointing to a graphical logo, which may be
+               used to help identify the entity.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>base_role</name>
+            <description>The role played by this entity; this is one of
+               contact, publisher, contributor, or creator.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.res_subject</name>
+         <description>Topics, object types, or other descriptive
+            keywords about the resource.
+         </description>
+         <utype>xpath:/content/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>res_subject</name>
+            <description>Topics, object types, or other descriptive
+               keywords about the resource.</description>
+            <utype>xpath:subject</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.capability</name>
+         <description>Pieces of behaviour of a resource.</description>
+         <utype>xpath:/capability/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>cap_index</name>
+            <description>An arbitrary identifier of this capability
+               within the resource.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>cap_type</name>
+            <description>The type of capability covered here. If looking
+               for endpoints implementing a certain standard, you should
+               not use this column but rather match against standard_id.</description>
+            <utype>xpath:@xsi:type</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>cap_description</name>
+            <description>A human-readable description of what this
+               capability provides as part of the over-all service.</description>
+            <utype>xpath:description</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>standard_id</name>
+            <description>A URI for a standard this capability conforms
+               to.</description>
+            <utype>xpath:@standardID</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.res_schema</name>
+         <description>Sets of tables related to resources.</description>
+         <utype>xpath:/tableset/schema/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>schema_index</name>
+            <description>An arbitrary identifier for the res_schema rows
+               belonging to a resource.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>schema_description</name>
+            <description>A free text description of the tableset
+               explaining in general how all of the tables are related.</description>
+            <utype>xpath:description</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>schema_name</name>
+            <description>A name for the set of tables.</description>
+            <utype>xpath:name</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>schema_title</name>
+            <description>A descriptive, human-interpretable name for the
+               table set.</description>
+            <utype>xpath:title</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>schema_utype</name>
+            <description>An identifier for a concept in a data model
+               that the data in this schema as a whole represent.</description>
+            <utype>xpath:utype</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.res_table</name>
+         <description>(Relational) tables that are part of schemata or
+            resources.</description>
+         <utype>xpath:/(tableset/schema/|)table/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>schema_index</name>
+            <description>Index of the schema this table belongs to, if
+               it belongs to a schema (otherwise NULL).</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>table_description</name>
+            <description>A free-text description of the table's
+               contents.</description>
+            <utype>xpath:description</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>table_name</name>
+            <description>The fully qualified name of the table. This
+               name should include all catalog or schema prefixes needed
+               to distinguish it in a query.</description>
+            <utype>xpath:name</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>table_index</name>
+            <description>An arbitrary identifier for the tables
+               belonging to a resource.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>table_title</name>
+            <description>A descriptive, human-interpretable name for the
+               table.</description>
+            <utype>xpath:title</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>table_type</name>
+            <description>A name for the role this table plays.
+               Recognized values include "output", indicating this table
+               is output from a query; "base_table", indicating a table
+               whose records represent the main subjects of its schema;
+               and "view", indicating that the table represents a useful
+               combination or subset of other tables. Other values are
+               allowed.</description>
+            <utype>xpath:@type</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>table_utype</name>
+            <description>An identifier for a concept in a data model
+               that the data in this table as a whole represent.</description>
+            <utype>xpath:utype</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.table_column</name>
+         <description>Metadata on columns of a resource's tables.</description>
+         <utype>xpath:/(tableset/schema/|)/table/column/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>table_index</name>
+            <description>Index of the table this column belongs to.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+         </column>
+         <column>
+            <name>name</name>
+            <description>The name of the column.</description>
+            <utype>xpath:name</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>ucd</name>
+            <description>A unified content descriptor that describes the
+               scientific content of the column.</description>
+            <utype>xpath:ucd</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>unit</name>
+            <description>The unit associated with all values in the
+               column.</description>
+            <utype>xpath:unit</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>utype</name>
+            <description>An identifier for a role in a data model that
+               the data in this column represents.</description>
+            <utype>xpath:utype</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>std</name>
+            <description>If 1, the meaning and use of this column is
+               reserved and defined by a standard model. If 0, it
+               represents a database-specific column that effectively
+               extends beyond the standard.</description>
+            <utype>xpath:@std</utype>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>datatype</name>
+            <description>The type of the data contained in the column.</description>
+            <utype>xpath:dataType</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>extended_schema</name>
+            <description>An identifier for the schema that the value
+               given by the extended attribute is drawn from.</description>
+            <utype>xpath:dataType/@extendedSchema</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>extended_type</name>
+            <description>A custom type for the values this column
+               contains.</description>
+            <utype>xpath:dataType/@extendedType</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>arraysize</name>
+            <description>The shape of the array that constitutes the
+               value, e.g., 4, *, 4*, 5x4, or 5x*, as specified by
+               VOTable.</description>
+            <utype>xpath:dataType/@arraysize</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>delim</name>
+            <description>The string that is used to delimit elements of
+               an array value when arraysize is not '1'.</description>
+            <utype>xpath:dataType/@delim</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>type_system</name>
+            <description>The type system used, as a QName with a
+               canonical prefix; this will ususally be one of
+               vs:simpledatatype, vs:votabletype, and vs:taptype.</description>
+            <utype>xpath:dataType/@xsi:type</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>flag</name>
+            <description>Hash-separated keywords representing traits of
+               the column. Recognized values include "indexed",
+               "primary", and "nullable".</description>
+            <utype>xpath:flag</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>column_description</name>
+            <description>A free-text description of the column's
+               contents.</description>
+            <utype>xpath:description</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.res_table</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+            <fkColumn>
+               <fromColumn>table_index</fromColumn>
+               <targetColumn>table_index</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.res_detail</name>
+         <description>XPath-value pairs for members of resource or
+            capability and their derivations that are less used and/or
+            from VOResource extensions. The pairs refer to a resource if
+            cap_index is NULL, to the referenced capability otherwise.
+         </description>
+         <utype>ivo://ivoa.net/std/RegTAP#1.1</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>cap_index</name>
+            <description>The index of the parent capability; if NULL the
+               xpath-value pair describes a member of the entire
+               resource.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>detail_xpath</name>
+            <description>The xpath of the data item.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>detail_value</name>
+            <description>(Atomic) value of the member.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.interface</name>
+         <description>Information on access modes of a capability.</description>
+         <utype>xpath:/capability/interface/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>cap_index</name>
+            <description>The index of the parent capability.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>indexed</flag>
+         </column>
+         <column>
+            <name>intf_index</name>
+            <description>An arbitrary identifier for the interfaces of a
+               resource.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>indexed</flag>
+            <flag>primary</flag>
+         </column>
+         <column>
+            <name>intf_type</name>
+            <description>The type of the interface (vr:webbrowser,
+               vs:paramhttp, etc).</description>
+            <utype>xpath:@xsi:type</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>intf_role</name>
+            <description>An identifier for the role the interface plays
+               in the particular capability. If the value is equal to
+               "std" or begins with "std:", then the interface refers to
+               a standard interface defined by the standard referred to
+               by the capability's standardID attribute.</description>
+            <utype>xpath:@role</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>std_version</name>
+            <description>The version of a standard interface
+               specification that this interface complies with. When the
+               interface is provided in the context of a Capability
+               element, then the standard being refered to is the one
+               identified by the Capability's standardID element.</description>
+            <utype>xpath:@version</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>query_type</name>
+            <description>Hash-joined list of expected HTTP method (get
+               or post) supported by the service.</description>
+            <utype>xpath:queryType</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>result_type</name>
+            <description>The MIME type of a document returned in the
+               HTTP response.</description>
+            <utype>xpath:resultType</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>wsdl_url</name>
+            <description>The location of the WSDL that describes this
+               Web Service. If NULL, the location can be assumed to be
+               the accessURL with '?wsdl' appended.</description>
+            <utype>xpath:wsdlURL</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>url_use</name>
+            <description>A flag indicating whether this should be
+               interpreted as a base URL ('base'), a full URL ('full'),
+               or a URL to a directory that will produce a listing of
+               files ('dir').</description>
+            <utype>xpath:accessURL/@use</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>access_url</name>
+            <description>The URL at which the interface is found.</description>
+            <utype>xpath:accessURL</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>mirror_url</name>
+            <description>Secondary access URLs of this interface,
+               separated by hash characters.</description>
+            <utype>xpath:mirrorURL</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>authenticated_only</name>
+            <description>A flag for whether an interface is available
+               for anonymous use (=0) or only authenticated clients are
+               served (=1).</description>
+            <utype>xpath:securityMethod</utype>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+         </column>
+         <column>
+            <name>security_method_id</name>
+            <description>This column was mentioned in drafts of RegTAP
+               1.1 but was abandoned before RegTAP 1.1 REC. Do not use
+               any more. This is just here to avoid a flag day for
+               clients that experimentally used this column. This is
+               always NULL here.</description>
+            <utype>not mapped</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.capability</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+            <fkColumn>
+               <fromColumn>cap_index</fromColumn>
+               <targetColumn>cap_index</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.relationship</name>
+         <description>Relationships between resources (like mirroring,
+            derivation, serving a data collection).
+         </description>
+         <utype>xpath:/content/relationship/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>relationship_type</name>
+            <description>The type of the relationship; these terms are
+               drawn from a controlled vocabulary and are
+               DataCite-compatible.</description>
+            <utype>xpath:relationshipType</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>related_id</name>
+            <description>The IVOA identifier for the resource referred
+               to.</description>
+            <utype>xpath:relatedResource/@ivo-id</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>related_name</name>
+            <description>The name of resource that this resource is
+               related to.</description>
+            <utype>xpath:relatedResource</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.intf_param</name>
+         <description>Input parameters for services.</description>
+         <utype>xpath:/capability/interface/param/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>intf_index</name>
+            <description>The index of the interface this parameter
+               belongs to.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+         </column>
+         <column>
+            <name>name</name>
+            <description>The name of the parameter.</description>
+            <utype>xpath:name</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>ucd</name>
+            <description>A unified content descriptor that describes the
+               scientific content of the parameter.</description>
+            <utype>xpath:ucd</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>unit</name>
+            <description>The unit associated with all values in the
+               parameter.</description>
+            <utype>xpath:unit</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>utype</name>
+            <description>An identifier for a role in a data model that
+               the data in this parameter represents.</description>
+            <utype>xpath:utype</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>std</name>
+            <description>If 1, the meaning and use of this parameter is
+               reserved and defined by a standard model. If 0, it
+               represents a database-specific parameter that effectively
+               extends beyond the standard.</description>
+            <utype>xpath:@std</utype>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>datatype</name>
+            <description>The type of the data contained in the
+               parameter.</description>
+            <utype>xpath:dataType</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>extended_schema</name>
+            <description>An identifier for the schema that the value
+               given by the extended attribute is drawn from.</description>
+            <utype>xpath:dataType/@extendedSchema</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>extended_type</name>
+            <description>A custom type for the values this parameter
+               contains.</description>
+            <utype>xpath:dataType/@extendedType</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>arraysize</name>
+            <description>The shape of the array that constitutes the
+               value, e.g., 4, *, 4*, 5x4, or 5x*, as specified by
+               VOTable.</description>
+            <utype>xpath:dataType/@arraysize</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>delim</name>
+            <description>The string that is used to delimit elements of
+               an array value when arraysize is not '1'.</description>
+            <utype>xpath:dataType/@delim</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>param_use</name>
+            <description>An indication of whether this parameter is
+               required to be provided for the application or service to
+               work properly (one of required, optional, ignored, or
+               NULL).</description>
+            <utype>xpath:@use</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>param_description</name>
+            <description>A free-text description of the parameter's
+               contents.</description>
+            <utype>xpath:description</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">unicodeChar</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.interface</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+            <fkColumn>
+               <fromColumn>intf_index</fromColumn>
+               <targetColumn>intf_index</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.validation</name>
+         <description>Validation levels for resources and capabilities.</description>
+         <utype>xpath:/(capability/|)validationLevel</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>validated_by</name>
+            <description>The IVOA ID of the registry or organisation
+               that assigned the validation level.</description>
+            <utype>xpath:validationLevel/@validatedBy</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>val_level</name>
+            <description>A numeric grade describing the quality of the
+               resource description, when applicable, to be used to
+               indicate the confidence an end-user can put in the
+               resource as part of a VO application or research study.</description>
+            <utype>xpath:validationLevel</utype>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>cap_index</name>
+            <description>If non-NULL, the validation only refers to the
+               capability referenced here.</description>
+            <dataType xsi:type="vs:VOTableType">short</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.res_date</name>
+         <description>A date associated with an event in the life cycle
+            of the resource. This could be creation or update. The role
+            column can be used to clarify.
+         </description>
+         <utype>xpath:/curation/</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>date_value</name>
+            <description>A date associated with an event in the life
+               cycle of the resource.</description>
+            <utype>xpath:date</utype>
+            <dataType arraysize="19" extendedType="timestamp"
+               xsi:type="vs:VOTableType"
+            >char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>value_role</name>
+            <description>A string indicating what the date refers to,
+               e.g., created, availability, updated. This value is
+               generally drawn from a controlled vocabulary.</description>
+            <utype>xpath:date/@role</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.alt_identifier</name>
+         <description>An alternate identifier associated with this
+            record. This can be a resiource identifier like a DOI (in
+            URI form, e.g., doi:10.1016/j.epsl.2011.11.037), or a person
+            identifier of a creator (typically an ORCID in URI form,
+            e.g., orcid:000-0000-0000-000X).
+         </description>
+         <utype>xpath:/(curation/creator/|)altIdentifier</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>alt_identifier</name>
+            <description>An identifier for the resource or an entity
+               related to the resource in URI form.</description>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.stc_spatial</name>
+         <description>The spatial coverage of resources. This table
+            associates footprints (ADQL geometries) with ivoids. The
+            footprints are intended for resource discovery; a reasonable
+            expectation for the resolution thus is something like a
+            degree.
+         </description>
+         <utype>stc:AstroCoordArea.Region</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>coverage</name>
+            <description>A geometry representing the area a resource
+               contains data for; this should be tight at least with a
+               resolution of degrees.</description>
+            <ucd>pos</ucd>
+            <dataType arraysize="*" extendedType="moc"
+               xsi:type="vs:VOTableType"
+            >char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>ref_system_name</name>
+            <description>The reference frame coverage is written in.
+               This is currently reserved and fixed to NULL. Clients
+               should always add a constraint to NULL for this to avoid
+               matching non-celestial services later.</description>
+            <ucd>pos.frame</ucd>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>nullable</flag>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.stc_temporal</name>
+         <description>The temporal coverage of resources, given as one
+            or more intervals; the total coverage is (a subset of) the
+            union of all intervals given for a resource. All times are
+            understood as MJD for TDB at the solar system barycenter.
+         </description>
+         <utype>stc:AstroCoordArea.TimeInterval</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>time_start</name>
+            <description>Lower limit of a time interval covered by the
+               resource.</description>
+            <unit>d</unit>
+            <utype>stc:AstroCoordArea.TimeInterval.StartTime</utype>
+            <dataType xsi:type="vs:VOTableType">float</dataType>
+         </column>
+         <column>
+            <name>time_end</name>
+            <description>Upper limit of a time interval covered by the
+               resource.</description>
+            <unit>d</unit>
+            <utype>stc:AstroCoordArea.TimeInterval.EndTime</utype>
+            <dataType xsi:type="vs:VOTableType">float</dataType>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.stc_spectral</name>
+         <description>The spectral coverage of resources, given as one
+            or more intervals; the total coverage is (a subset of) the
+            union of all intervals given for a resource. All spectral
+            values are understood as given as wavelength in meters; they
+            are supposed to express wavelength at the barycenter of the
+            solar system (which means instrument values should be close
+            enough to work).
+         </description>
+         <utype>stc:AstroCoordArea.SpectralInterval</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>wavelength_start</name>
+            <description>Lower limit of a vacuum wavelength interval
+               covered by the resource (for the solar system
+               barycenter).</description>
+            <unit>m</unit>
+            <utype>stc:AstroCoordArea.SpectralInterval.LoLimit</utype>
+            <dataType xsi:type="vs:VOTableType">float</dataType>
+         </column>
+         <column>
+            <name>wavelength_end</name>
+            <description>Upper limit of a vacuum wavelength interval
+               covered by the resource (for the solar system
+               barycenter).</description>
+            <unit>m</unit>
+            <utype>stc:AstroCoordArea.SpectralInterval.HiLimit</utype>
+            <dataType xsi:type="vs:VOTableType">float</dataType>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+      <table>
+         <name>rr.stc_redshift</name>
+         <description>The redshift coverage of resources, given as one
+            or more intervals; the total coverage is (a subset of) the
+            union of all intervals given for a resource. Redshifts here
+            are understood as delta lambda/lamda.
+         </description>
+         <utype>stc:AstroCoordArea.SpectralInterval</utype>
+         <column>
+            <name>ivoid</name>
+            <description>The parent resource.</description>
+            <utype>xpath:/identifier</utype>
+            <dataType arraysize="*" xsi:type="vs:VOTableType">char</dataType>
+            <flag>indexed</flag>
+            <flag>nullable</flag>
+         </column>
+         <column>
+            <name>redshift_start</name>
+            <description>Lower limit of a redshift interval covered by
+               the resource.</description>
+            <utype>stc:AstroCoordArea.RedshiftInterval.LoLimit</utype>
+            <dataType xsi:type="vs:VOTableType">float</dataType>
+         </column>
+         <column>
+            <name>redshift_end</name>
+            <description>Upper limit of a redshift interval covered by
+               the resource.</description>
+            <utype>stc:AstroCoordArea.RedshiftInterval.LoLimit</utype>
+            <dataType xsi:type="vs:VOTableType">float</dataType>
+         </column>
+         <foreignKey>
+            <targetTable>rr.resource</targetTable>
+            <fkColumn>
+               <fromColumn>ivoid</fromColumn>
+               <targetColumn>ivoid</targetColumn>
+            </fkColumn>
+         </foreignKey>
+      </table>
+   </schema>
+    </tableset>
+    
+   </ri:Resource>
+</ri:VOResources>

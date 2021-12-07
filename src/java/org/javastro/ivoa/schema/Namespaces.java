@@ -1,6 +1,4 @@
-/*
- * $Id: Namespaces.java,v 1.8 2011/09/01 14:03:58 pah Exp $
- * 
+/* 
  * Created on 17 Mar 2008 by Paul Harrison (paul.harrison@manchester.ac.uk)
  * Copyright 2008 Astrogrid. All rights reserved.
  *

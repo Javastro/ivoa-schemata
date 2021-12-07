@@ -9,6 +9,8 @@
 package org.javastro.ivoa.schema;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.Reader;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,6 +19,9 @@ import java.util.List;
 import java.util.Map;
 
 import javax.xml.transform.stream.StreamSource;
+
+import org.w3c.dom.ls.LSInput;
+
 import static org.javastro.ivoa.schema.Namespaces.*;
 
 /**
@@ -120,6 +125,202 @@ public class SchemaMap {
                 }).toArray(StreamSource[]::new);
     }
 
+    
+    /**
+     * A {@link LSInput} suitable for validation. Note that this is not general - lots of the interface is unimplemented
+     * @author Paul Harrison (paul.harrison@manchester.ac.uk) 
+     * @since 17 Aug 2021
+     */
+    private static class SchemaInput implements LSInput {
+
+        
+        private final String namespace;
+        private final URL url;
+        
+        public SchemaInput(String namespace, URL url) {
+            this.namespace = namespace;
+            this.url = url;
+        }
+       
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#getCharacterStream()
+         */
+        @Override
+        public Reader getCharacterStream() {
+         return null;            
+        }
+
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#setCharacterStream(java.io.Reader)
+         */
+        @Override
+        public void setCharacterStream(Reader characterStream) {
+            // TODO Auto-generated method stub
+            throw new  UnsupportedOperationException("LSInput.setCharacterStream() not implemented");
+            
+        }
+
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#getByteStream()
+         */
+        @Override
+        public InputStream getByteStream() {
+            try {
+                return url.openStream();
+            } catch (IOException e) {
+                logger.error("cannot open stream for schema",e);
+                return null;
+            }
+        }
+
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#setByteStream(java.io.InputStream)
+         */
+        @Override
+        public void setByteStream(InputStream byteStream) {
+            // TODO Auto-generated method stub
+            throw new  UnsupportedOperationException("LSInput.setByteStream() not implemented");
+            
+        }
+
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#getStringData()
+         */
+        @Override
+        public String getStringData() {
+            return null;
+        }
+
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#setStringData(java.lang.String)
+         */
+        @Override
+        public void setStringData(String stringData) {
+            // TODO Auto-generated method stub
+            throw new  UnsupportedOperationException("LSInput.setStringData() not implemented");
+            
+        }
+
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#getSystemId()
+         */
+        @Override
+        public String getSystemId() {
+           return url.toString();            
+        }
+
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#setSystemId(java.lang.String)
+         */
+        @Override
+        public void setSystemId(String systemId) {
+            // TODO Auto-generated method stub
+            throw new  UnsupportedOperationException("LSInput.setSystemId() not implemented");
+            
+        }
+
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#getPublicId()
+         */
+        @Override
+        public String getPublicId() {
+            return null;
+        }
+
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#setPublicId(java.lang.String)
+         */
+        @Override
+        public void setPublicId(String publicId) {
+            // TODO Auto-generated method stub
+            throw new  UnsupportedOperationException("LSInput.setPublicId() not implemented");
+            
+        }
+
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#getBaseURI()
+         */
+        @Override
+        public String getBaseURI() {
+            return null;
+        }
+
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#setBaseURI(java.lang.String)
+         */
+        @Override
+        public void setBaseURI(String baseURI) {
+            // TODO Auto-generated method stub
+            throw new  UnsupportedOperationException("LSInput.setBaseURI() not implemented");
+            
+        }
+
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#getEncoding()
+         */
+        @Override
+        public String getEncoding() {
+            return null;
+        }
+
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#setEncoding(java.lang.String)
+         */
+        @Override
+        public void setEncoding(String encoding) {
+            // TODO Auto-generated method stub
+            throw new  UnsupportedOperationException("LSInput.setEncoding() not implemented");
+            
+        }
+
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#getCertifiedText()
+         */
+        @Override
+        public boolean getCertifiedText() {
+            return false;
+            
+        }
+
+        /**
+         * {@inheritDoc}
+         * overrides @see org.w3c.dom.ls.LSInput#setCertifiedText(boolean)
+         */
+        @Override
+        public void setCertifiedText(boolean certifiedText) {
+            // TODO Auto-generated method stub
+            throw new  UnsupportedOperationException("LSInput.setCertifiedText() not implemented");
+            
+        }
+
+        
+    }
+
+
+    /**
+     * @param namespaceURI
+     * @return
+     */
+    public static LSInput getSchemaLSInput(String namespaceURI) {
+       logger.trace("looking up schema with namespaxe {}", namespaceURI);
+       return new SchemaInput(namespaceURI, ALL.get(namespaceURI));
+        
+    }
 }
 
 
