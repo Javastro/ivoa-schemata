@@ -11,7 +11,7 @@ package org.javastro.ivoa.schema;
  *
  * @author Guy Rixon
  */
-public class StandardIds {
+public final class StandardIds {
   
   /**
    * Cone search: ivo://ivoa.net/std/ConeSearch.
@@ -35,6 +35,7 @@ public class StandardIds {
    * Open Sky Node: ivo://ivoa.net/std/OpenSkyNode.
    * Taken from IVOA's XML schema for http://www.ivoa.net/xml/SkyNode/v0.2,
    */
+  @Deprecated
   public final static String OPEN_SKY_NODE = 
       "ivo://ivoa.net/std/OpenSkyNode";
   
@@ -49,6 +50,7 @@ public class StandardIds {
    * Chosen by AstroGrid during cycle 1 of AG3.
    * A capability for CEA v1.0 implies the CEC SOAP service.
    */
+  @Deprecated
   public final static String CEA = "ivo://org.astrogrid/std/CEA/v1.0";
   
   /**

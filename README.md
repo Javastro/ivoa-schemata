@@ -1,8 +1,7 @@
 IVOA Schemata
 ============================
 
-[![Build Status](https://travis-ci.org/javastro/ivoa-schemata.svg?branch=master)](https://travis-ci.org/javastro/ivoa-schemata)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.javastro/ivoa-schema/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.javastro/ivoa-schema/)
+[![IVOA Schemata](https://img.shields.io/maven-central/v/org.javastro.ivoa/ivoa-schema.svg?label=ivoa-schema)](https://search.maven.org/artifact/org.javastro.ivoa/ivoa-schema/)
 
 
 The aim of this project is to gather together the  
@@ -12,6 +11,6 @@ to validate an instance or generate other artifacts offline.
 
 The importance of local schema access is show by https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Prevention_Cheat_Sheet
 
-The schemata in the project should not be considered definitive if they differ
+*Warning* - The schemata in the project should not be considered definitive if they differ
 from those at the official source http://www.ivoa.net/xml/
 
