@@ -26,7 +26,6 @@ import static org.javastro.ivoa.schema.Namespaces.*;
 
 /**
  * static class that provides maps of all namespace - schema locations in this project.
- * useful to pass to schema-validation methods in {@link org.astrogrid.test.AstrogridAssert}
  */
 public class SchemaMap {
 

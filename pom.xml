@@ -6,7 +6,7 @@
    <parent>
       <groupId>org.javastro</groupId>
       <artifactId>javastro-mavenbase</artifactId>
-      <version>0.6.0</version>
+      <version>0.6.1</version>
       <relativePath/>
    </parent>
    <artifactId>ivoa-schema</artifactId>
@@ -54,7 +54,7 @@
          <artifactId>maven-assembly-plugin</artifactId>
          <executions>
             <execution>
-               <phase>package</phase>
+               <phase>verify</phase>
                <goals>
                   <goal>single</goal>
                </goals>
