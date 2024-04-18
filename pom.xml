@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
 >
    <modelVersion>4.0.0</modelVersion>
@@ -7,70 +8,56 @@
       <groupId>org.javastro</groupId>
       <artifactId>javastro-mavenbase</artifactId>
       <version>0.6.1</version>
-      <relativePath/>
+      <relativePath />
    </parent>
    <artifactId>ivoa-schema</artifactId>
    <groupId>org.javastro.ivoa</groupId>
-   
+
    <packaging>jar</packaging>
    <name>ivoa-schemata</name>
-   <version>0.9.5</version>
+   <version>0.9.6</version>
    <description>
       A collection of IVOA schema files and some associated utility classes.
    </description>
    <dependencies>
       <dependency>
-    <groupId>org.xmlresolver</groupId>
-    <artifactId>xmlresolver</artifactId>
-    <version>5.2.0</version>
-     </dependency>
+         <groupId>org.xmlresolver</groupId>
+         <artifactId>xmlresolver</artifactId>
+         <version>6.0.4</version>
+      </dependency>
+      <dependency>
+         <groupId>org.xmlresolver</groupId>
+         <artifactId>xmlresolver</artifactId>
+         <version>6.0.4</version>
+         <classifier>data</classifier>
+      </dependency>
    </dependencies>
    <build>
-      <sourceDirectory>src/java</sourceDirectory>
-      
-      <!-- This section controls the set of files other than Java classes 
-         that are built into the jar artefact (Java classes are included automatically). -->
-      <resources>
-         <!-- The schemata collection. This includes a directory tree rooted 
-            at "schema", as required for publication on the AstroGrid software site. -->
-         <resource>
-            <directory>${basedir}/src</directory>
-            <includes>
-               <include>schema/*</include>
-               <include>schema/**/*</include>
-            </includes>
-         </resource>
-      </resources>
-      <testSourceDirectory>src/test/java</testSourceDirectory>
-     <testResources>
-      <testResource>
-        <directory>src/test/resources</directory>
-      </testResource>
-    </testResources>
-    
-   <plugins>
-      <plugin>
-         <groupId>org.apache.maven.plugins</groupId>
-         <artifactId>maven-assembly-plugin</artifactId>
-         <executions>
-            <execution>
-               <phase>verify</phase>
-               <goals>
-                  <goal>single</goal>
-               </goals>
-               <configuration>
-                  <archive>
-                     <manifest>
-                        <mainClass>org.javastro.ivoa.schema.XMLValidator</mainClass>
-                     </manifest>
-                  </archive>
-                  <descriptors>
-                     <descriptor>runnable-assembly.xml</descriptor>
-                  </descriptors>
-               </configuration>
-            </execution>
-         </executions>
-      </plugin>
-   </plugins>
+
+
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <executions>
+               <execution>
+                  <phase>verify</phase>
+                  <goals>
+                     <goal>single</goal>
+                  </goals>
+                  <configuration>
+                     <archive>
+                        <manifest>
+                           <mainClass>org.javastro.ivoa.schema.XMLValidator</mainClass>
+                        </manifest>
+                     </archive>
+                     <descriptors>
+                        <descriptor>runnable-assembly.xml</descriptor>
+                     </descriptors>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
+      </plugins>
    </build>
 </project>

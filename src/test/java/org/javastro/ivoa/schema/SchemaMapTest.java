@@ -5,7 +5,6 @@ import java.net.URL;
 import java.util.Iterator;
 import java.util.Map;
 
-import org.javastro.ivoa.schema.SchemaMap;
 import org.junit.Test;
 
 import junit.framework.TestCase;
@@ -19,13 +18,13 @@ public class SchemaMapTest extends TestCase {
   
   @Test
   public void testAllEntriesPresent() throws Exception {
-    Map m = SchemaMap.ALL;
+    Map<String, URL> m = SchemaMap.ALLUrl;
     
     // The values in the schema map are the URLs leading to the schemata; the
     // keys are the namespace URIs. The URLs typically lead into the contracts
     // jar. For each key, check that there is a value that the value is a URL
     // and the the URL points to data. Don't bother reading the data.
-    for (Iterator i = m.keySet().iterator(); i.hasNext(); ) {
+    for (Iterator<String> i = m.keySet().iterator(); i.hasNext(); ) {
       Object k = i.next();
       System.out.println("\n" + k);
       Object v = m.get(k);
@@ -36,6 +35,10 @@ public class SchemaMapTest extends TestCase {
       File f = new File(u.toURI());
       assertTrue(f.getName()+" does not exist",f.exists());
     }
+    System.out.println("catalogue");
+    System.out.println(SchemaMap.xmlCatalogue);
   }
+  
+ 
   
 }

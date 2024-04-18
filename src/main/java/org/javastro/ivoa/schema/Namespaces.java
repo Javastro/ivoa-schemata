@@ -10,8 +10,11 @@
 
 package org.javastro.ivoa.schema;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Enumerates the "current" namespaces. This gives symbolic names to the most up to date namespace URIs
@@ -26,6 +29,7 @@ public final class Namespaces {
 
     static final Map<String, Namespaces> prefixes = new HashMap<String, Namespaces>(); 
     static final Map<String, Namespaces> namespaces = new HashMap<String, Namespaces>();
+    static final List<Namespaces> all = new ArrayList<>();
     private final String prefix;
     private final String namespace;
     
@@ -34,6 +38,7 @@ public final class Namespaces {
 	this.prefix = prefix;
 	Namespaces.prefixes.put(prefix, this);
 	Namespaces.namespaces.put(namespace, this);
+	Namespaces.all.add(this);
     }
 // useful namespaces...   
     public static final Namespaces XSI = new Namespaces("xsi","http://www.w3.org/2001/XMLSchema-instance");
@@ -82,6 +87,11 @@ public final class Namespaces {
 
     public String getNamespace() {
         return namespace;
+    }
+    
+    public static List<Namespaces> getAllIVOA()
+    {
+        return all.stream().filter(n -> n.namespace.contains("www.ivoa.net")).collect(Collectors.toList());
     }
     
     

@@ -51,7 +51,9 @@ class XMLValidatorTest {
     void testValidateSourceOK() {
             XMLValidator v = new XMLValidator();
             boolean result = v.validate(this.getClass().getResource("/VOResource.xml"));
+            if(!result) v.printErrors(System.out);
             assertTrue(result);
+            
     }
 
     @Test
