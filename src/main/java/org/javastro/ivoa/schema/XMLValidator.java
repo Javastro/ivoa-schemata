@@ -14,6 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -251,8 +252,13 @@ public class XMLValidator {
         URI caturi = URI.create("https://javastro.net/xml/catalog.xml");//IMPL - not sure is this should be more obviously false.
         config.addCatalog(caturi.toString());
         EntryCatalog cat = manager.loadCatalog(caturi, SchemaMap.asXMLCatalogue());
-        
-        XMLResolver resolver = new XMLResolver(config);
+       try {
+          manager.loadCatalog(XMLResolver.class.getResource("/org/xmlresolver/catalog.xml").toURI());
+       } catch (URISyntaxException e) {
+          throw new RuntimeException(e);
+       }
+
+       XMLResolver resolver = new XMLResolver(config);
         return resolver;
     }
 

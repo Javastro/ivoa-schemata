@@ -7,7 +7,7 @@
    <parent>
       <groupId>org.javastro</groupId>
       <artifactId>javastro-mavenbase</artifactId>
-      <version>0.6.4</version>
+      <version>0.6.5</version>
       <relativePath />
    </parent>
    <artifactId>ivoa-schema</artifactId>
@@ -15,7 +15,7 @@
 
    <packaging>jar</packaging>
    <name>ivoa-schemata</name>
-   <version>0.9.8</version>
+   <version>0.9.9</version>
    <description>
       A collection of IVOA schema files and some associated utility classes.
    </description>
@@ -41,7 +41,7 @@
             <artifactId>maven-assembly-plugin</artifactId>
             <executions>
                <execution>
-                  <phase>verify</phase>
+                  <phase>package</phase>
                   <goals>
                      <goal>single</goal>
                   </goals>
