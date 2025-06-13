@@ -59,6 +59,9 @@ public final class Namespaces {
     public static final Namespaces VOSI_TAB = new Namespaces("vta","http://www.ivoa.net/xml/VOSITables/v1.0");
     public static final Namespaces VOSI_AV = new Namespaces("vav","http://www.ivoa.net/xml/VOSIAvailability/v1.0");
     public static final Namespaces OAI_PMH = new Namespaces("oai", "http://www.openarchives.org/OAI/2.0/");
+    public static final Namespaces OAI_DC = new Namespaces("oai_dc", "http://www.openarchives.org/OAI/2.0/oai_dc/");
+    public static final Namespaces DC = new Namespaces("dc", "http://purl.org/dc/elements/1.1/");
+
     public static final Namespaces VODML = new Namespaces("vodml", "http://www.ivoa.net/xml/VODML/v1");
     public static final Namespaces SSAP = new Namespaces("ssap", "http://www.ivoa.net/xml/SSA/v1.1");
     public static final Namespaces SLAP = new Namespaces("slap", "http://www.ivoa.net/xml/SLAP/v1.0");

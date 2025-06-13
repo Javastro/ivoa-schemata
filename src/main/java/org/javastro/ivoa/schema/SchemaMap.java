@@ -64,7 +64,9 @@ public class SchemaMap {
         
         //oai schemas
         ALL.put("http://www.openarchives.org/OAI/2.0/","/schema/OAI-PMH.xsd");
-        
+        ALL.put("http://www.openarchives.org/OAI/2.0/oai_dc/","/schema/oai_dc.xsd");
+        ALL.put("http://purl.org/dc/elements/1.1/","/schema/simpledc20021212.xsd");
+
         
         //stc schemas (go with adql imports usually)
         
@@ -149,6 +151,11 @@ public class SchemaMap {
        return ALLUrl.get(namespace);
     }
     
+    /**
+     * return an inputstream for the namespace
+     * @param namespace - the namespace idendifier for the schema
+     * @return
+     */
     public static InputStream getSchemaAsStream(String namespace) {
         return SchemaMap.class.getResourceAsStream(ALL.get(namespace));
     }
@@ -172,7 +179,7 @@ public class SchemaMap {
      */
     public static StreamSource[] getRegistrySchemaAsSources()
     {
-        List<Namespaces> ns = Arrays.asList(RI,VR,VS,SIA,CS,REG, VA, VSTD, VOSI_TAB, STC);
+        List<Namespaces> ns = Arrays.asList(OAI_PMH, OAI_DC, RI, VR, VS, SIA,CS,REG, VA, VSTD, VOSI_TAB, STC);
         return schemaSourceFromNamespaces(ns);
     }
     
