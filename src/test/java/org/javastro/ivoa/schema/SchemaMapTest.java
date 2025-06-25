@@ -1,20 +1,22 @@
 package org.javastro.ivoa.schema;
 
+import org.junit.jupiter.api.Test;
+
 import java.io.File;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.Map;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import junit.framework.TestCase;
 
 /**
  * JUnit tests for SchemaMap.
  *
  * @author Guy Rixon
  */
-public class SchemaMapTest extends TestCase {
+public class SchemaMapTest  {
   
   @Test
   public void testAllEntriesPresent() throws Exception {
@@ -33,7 +35,7 @@ public class SchemaMapTest extends TestCase {
       assertTrue(v instanceof URL);
       URL u = (URL)v;
       File f = new File(u.toURI());
-      assertTrue(f.getName()+" does not exist",f.exists());
+      assertTrue(f.exists(),f.getName()+" does not exist");
     }
     System.out.println("catalogue");
     System.out.println(SchemaMap.xmlCatalogue);

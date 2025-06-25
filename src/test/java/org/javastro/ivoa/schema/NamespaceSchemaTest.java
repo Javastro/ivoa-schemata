@@ -9,14 +9,13 @@
 
 package org.javastro.ivoa.schema;
 
-import static org.junit.Assert.*;
+
 
 import java.net.URL;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /**
  * Tests that there is a schema for each of the standard namespaces .
@@ -25,33 +24,20 @@ import org.junit.Test;
  */
 public class NamespaceSchemaTest {
 
-    /**
-     * @throws java.lang.Exception
-     */
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
-    }
 
     /**
      * @throws java.lang.Exception
      */
-    @AfterClass
-    public static void tearDownAfterClass() throws Exception {
-    }
-
-    /**
-     * @throws java.lang.Exception
-     */
-    @Before
+    @BeforeEach
     public void setUp() throws Exception {
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     public void testSchemaPresent() {
         for (String namespace : Namespaces.getNamespaceURIs()) {
            URL mapUrl = SchemaMap.getSchemaURL(namespace);
            if(!namespace.contains("www.w3.org")) // don't necessarily expect these...
-             assertNotNull(namespace+" should have an associated schema", mapUrl);
+             assertNotNull(mapUrl, namespace+" should have an associated schema");
         }
     }
 
