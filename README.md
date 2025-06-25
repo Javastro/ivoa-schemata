@@ -3,6 +3,7 @@ IVOA Schemata
 
 [![IVOA Schemata](https://img.shields.io/maven-central/v/org.javastro.ivoa/ivoa-schema.svg?label=ivoa-schema)](https://search.maven.org/artifact/org.javastro.ivoa/ivoa-schema/)
 
+[![Java CI with Maven](https://github.com/Javastro/ivoa-schemata/actions/workflows/maven.yml/badge.svg)](https://github.com/Javastro/ivoa-schemata/actions/workflows/maven.yml)
 
 The aim of this project is to gather together the  
 [IVOA schemata](http://www.ivoa.net/xml/) so that they can be referred to as local
