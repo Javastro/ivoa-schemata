@@ -44,7 +44,7 @@ public final class Namespaces {
     public static final Namespaces XSI = new Namespaces("xsi","http://www.w3.org/2001/XMLSchema-instance");
     public static final Namespaces XSD = new Namespaces("xsd","http://www.w3.org/2001/XMLSchema");
     public static final Namespaces RI = new Namespaces("ri","http://www.ivoa.net/xml/RegistryInterface/v1.0");
-    public static final Namespaces REG = new Namespaces("reg","http://www.ivoa.net/xml/VORegistry/v1.0");
+    public static final Namespaces REG = new Namespaces("vg","http://www.ivoa.net/xml/VORegistry/v1.0");
     public static final Namespaces VR = new Namespaces("vr","http://www.ivoa.net/xml/VOResource/v1.0");
     public static final Namespaces VS = new Namespaces("vs","http://www.ivoa.net/xml/VODataService/v1.1");
     public static final Namespaces VA = new Namespaces("va","http://www.ivoa.net/xml/VOApplication/v1.0rc1");
