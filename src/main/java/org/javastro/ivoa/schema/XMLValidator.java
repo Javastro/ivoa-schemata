@@ -50,7 +50,7 @@ public class XMLValidator {
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory
             .getLogger(XMLValidator.class);
     private SimpleErrorHandler errorHandler = new SimpleErrorHandler();
-    private Map<ErrorKind, List<ErrorDesciption>> errorMap;
+    private Map<ErrorKind, List<ErrorDesciption>> errorMap = new HashMap<>();
     
 
     /**
@@ -108,7 +108,7 @@ public class XMLValidator {
         schemaFactory.setResourceResolver(new LSResourceAdapter(xmlResolver));
            Validator validator = null;
             try {
-                schemaFactory.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
+                schemaFactory.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "file");
                 Schema schema = schemaFactory.newSchema(SchemaMap.getRegistrySchemaAsSources()); //TODO just allow against all the schema?
                 validator = schema.newValidator();
             } catch (SAXException e) {
@@ -241,7 +241,7 @@ public class XMLValidator {
     public static XMLResolver makeXMLResolver() {
         XMLResolverConfiguration config = new XMLResolverConfiguration();
         config.setFeature(ResolverFeature.DEFAULT_LOGGER_LOG_LEVEL, "info");
-        config.setFeature(ResolverFeature.ACCESS_EXTERNAL_DOCUMENT, "");
+        config.setFeature(ResolverFeature.ACCESS_EXTERNAL_DOCUMENT, "all"); //TODO really this needs to be nothing, but xmlresolver does not work properly with that set - it tests against this before doing the catalogue resolution.
         config.setFeature(ResolverFeature.THROW_URI_EXCEPTIONS, true);
         config.setFeature(ResolverFeature.ALWAYS_RESOLVE, false);
         config.setFeature(ResolverFeature.PREFER_PUBLIC, false);
