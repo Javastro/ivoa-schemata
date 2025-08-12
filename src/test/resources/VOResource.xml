@@ -20,8 +20,6 @@
       <title>title</title>
       <shortName>shortName</shortName>
       <identifier>ivo://test.org/resource1</identifier>
-      <altIdentifier>myaltt</altIdentifier>
-      <altIdentifier>nyalt2</altIdentifier>
       <curation>
          <publisher>publisher name</publisher>
          <creator>
