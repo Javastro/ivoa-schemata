@@ -70,8 +70,7 @@ public class SchemaMap {
         
         //stc schemas (go with adql imports usually)
         
-        ALL.put("http://www.w3.org/1999/xlink","/schema/xlink.xsd");        	
-        ALL.put("http://www.ivoa.net/xml/STC/stc-v1.30.xsd","/schema/STC-v1.30.xsd");        	
+        ALL.put("http://www.ivoa.net/xml/STC/stc-v1.30.xsd","/schema/STC-v1.30.xsd");
         ALL.put("http://www.ivoa.net/xml/STC/stc-v1.20.xsd","/schema/STC-v1.20.xsd");
         
         ALL.put("http://www.ivoa.net/xml/STC/STCcoords/v1.20","/schema/STC-coords-v1.20.xsd");
@@ -179,7 +178,7 @@ public class SchemaMap {
      */
     public static StreamSource[] getRegistrySchemaAsSources()
     {
-        List<Namespaces> ns = Arrays.asList(OAI_PMH, OAI_DC, RI, VR, VS, SIA,CS,REG, VA, VSTD, VOSI_TAB, STC);
+        List<Namespaces> ns = Arrays.asList(OAI_PMH, OAI_DC, DC, RI, VR, VS, SIA,CS,REG, VA, VSTD, VOSI_TAB, STC);
         return schemaSourceFromNamespaces(ns);
     }
     

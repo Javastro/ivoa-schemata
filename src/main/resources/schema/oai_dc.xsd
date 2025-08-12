@@ -1,42 +1,42 @@
-<schema targetNamespace="http://www.openarchives.org/OAI/2.0/oai_dc/" 
+<xs:schema targetNamespace="http://www.openarchives.org/OAI/2.0/oai_dc/"
         xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" 
-        xmlns:dc="http://purl.org/dc/elements/1.1/" 
-        xmlns="http://www.w3.org/2001/XMLSchema" 
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
         elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
-<annotation>
-  <documentation> 
+<xs:annotation>
+  <xs:documentation>
       XML Schema 2002-03-18 by Pete Johnston.
       Adjusted for usage in the OAI-PMH.
       Schema imports the Dublin Core elements from the DCMI schema for unqualified Dublin Core.
       2002-12-19 updated to use simpledc20021212.xsd (instead of simpledc20020312.xsd)
-  </documentation>
-</annotation>
+  </xs:documentation>
+</xs:annotation>
 
-<import namespace="http://purl.org/dc/elements/1.1/" 
+<xs:import namespace="http://purl.org/dc/elements/1.1/"
         schemaLocation="./simpledc20021212.xsd"/>
 	
-<element name="dc" type="oai_dc:oai_dcType"/>
+<xs:element name="dc" type="oai_dc:oai_dcType"/>
 
-<complexType name="oai_dcType">
-  <choice minOccurs="0" maxOccurs="unbounded">
-    <element ref="dc:title"/>
-    <element ref="dc:creator"/>
-    <element ref="dc:subject"/>
-    <element ref="dc:description"/>
-    <element ref="dc:publisher"/>
-    <element ref="dc:contributor"/>
-    <element ref="dc:date"/>
-    <element ref="dc:type"/>
-    <element ref="dc:format"/>
-    <element ref="dc:identifier"/>
-    <element ref="dc:source"/>
-    <element ref="dc:language"/>
-    <element ref="dc:relation"/>
-    <element ref="dc:coverage"/>
-    <element ref="dc:rights"/>
-  </choice>
-</complexType>
+<xs:complexType name="oai_dcType">
+  <xs:choice minOccurs="0" maxOccurs="unbounded">
+    <xs:element ref="dc:title"/>
+    <xs:element ref="dc:creator"/>
+    <xs:element ref="dc:subject"/>
+    <xs:element ref="dc:description"/>
+    <xs:element ref="dc:publisher"/>
+    <xs:element ref="dc:contributor"/>
+    <xs:element ref="dc:date"/>
+    <xs:element ref="dc:type"/>
+    <xs:element ref="dc:format"/>
+    <xs:element ref="dc:identifier"/>
+    <xs:element ref="dc:source"/>
+    <xs:element ref="dc:language"/>
+    <xs:element ref="dc:relation"/>
+    <xs:element ref="dc:coverage"/>
+    <xs:element ref="dc:rights"/>
+  </xs:choice>
+</xs:complexType>
 
-</schema>
+</xs:schema>
 
