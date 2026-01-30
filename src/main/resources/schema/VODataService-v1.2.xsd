@@ -6,7 +6,7 @@
            xmlns:stc="http://www.ivoa.net/xml/STC/stc-v1.30.xsd" 
            xmlns:vm="http://www.ivoa.net/xml/VOMetadata/v0.1"
            elementFormDefault="unqualified" attributeFormDefault="unqualified"
-           version="1.1wd3">
+           version="1.2">
 
    <xs:annotation>
       <xs:appinfo>
@@ -123,7 +123,7 @@
                    </xs:documentation>
                    <xs:documentation>
                      Each schema name must be
-                     unique within this tableset.
+                     unique within a tableset.
                    </xs:documentation>
                  </xs:annotation>
 
@@ -167,7 +167,7 @@
                   </xs:documentation>
                   <xs:documentation>
                      VODataService 1.2 does not prescribe a vocabulary for 
-                     what values are allowed here; an external standard.  As
+                     what values are allowed here.  As
                      long as no such vocabulary is agreed upon, the frame
                      attribute should not be set.
                   </xs:documentation>
@@ -227,7 +227,8 @@
                </xs:documentation>
                <xs:documentation>
                   This is written as for VOTable tabledata (i.e., 
-                  whitespace-separated C-style floating point literals).
+                  whitespace-separated C-style floating point literals), as
+                  in “47847.2 51370.2”.
                   The limits must be given as MJD.  While they
                   are not intended to be precise, they are to be understood
                   in TDB for the solar system barycenter.  The total coverage
@@ -278,21 +279,24 @@
             </xs:annotation>
          </xs:element>
 
-         <xs:element name="waveband" type="vs:Waveband" 
+         <xs:element name="waveband" type="xs:token" 
                      minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
                <xs:appinfo>
                  <vm:dcterm>Coverage.Spectral</vm:dcterm>
                </xs:appinfo>           
                <xs:documentation>
-                  A named spectral region of the electro-magnetic spectrum 
-                  that the resource's spectral coverage overlaps with.
+                  A name of a messenger that the resource is relevant for
+                  (e.g., was used in the measurements).  Terms must
+                  be taken from the vocabulary at 
+                  http://www.ivoa.net/rdf/messenger.
                </xs:documentation>
                <xs:documentation>
-                  Observations using non-electromagnetic messengers should
-                  not give a waveband in version 1.2 of VODataService.  It
-                  is expected that additional terms for these will be provided
-                  in a future version.
+                  It is a bit unfortunate that the element is still called
+                  waveband when it is now also covers non-electromagnetic
+                  messengers.  It was deemed that this slight notional
+                  sloppiness is preferable to introducing new and
+                  deprecating old elements.
                </xs:documentation>
             </xs:annotation>
          </xs:element>
@@ -326,7 +330,7 @@
    <xs:complexType name="ServiceReference">
       <xs:annotation>
          <xs:documentation>
-           The service URL for a potentially registerd service.  That is,
+           The service URL for a potentially registered service.  That is,
            if an IVOA identifier is also provided, then the service is 
            described in a registry.
          </xs:documentation>
@@ -347,68 +351,6 @@
          </xs:extension>       
       </xs:simpleContent>
    </xs:complexType>   
-
-   <xs:simpleType name="Waveband">
-      <xs:restriction base="xs:token">
-         <xs:enumeration value="Radio">
-            <xs:annotation>
-               <xs:documentation>
-                 wavelength &gt;= 10 mm; frequency &lt;= 30 GHz.
-               </xs:documentation>
-            </xs:annotation>
-         </xs:enumeration>
-         <xs:enumeration value="Millimeter">
-            <xs:annotation>
-               <xs:documentation>
-                 0.1 mm &lt;= wavelength &lt;= 10 mm; 
-                 3000 GHz &gt;= frequency &gt;= 30 GHz.
-               </xs:documentation>
-            </xs:annotation>
-         </xs:enumeration>
-         <xs:enumeration value="Infrared">
-            <xs:annotation>
-               <xs:documentation>
-                 1 micron &lt;= wavelength &lt;= 100 micons 
-               </xs:documentation>
-            </xs:annotation>
-         </xs:enumeration>
-         <xs:enumeration value="Optical">
-            <xs:annotation>
-               <xs:documentation>
-                 300 nm &lt;= wavelength &lt;= 1000 nm; 
-               </xs:documentation>
-            </xs:annotation>
-         </xs:enumeration>
-         <xs:enumeration value="UV">
-            <xs:annotation>
-               <xs:documentation>
-                 100 nm &lt;= wavelength &lt;= 300 nm; 
-               </xs:documentation>
-            </xs:annotation>
-         </xs:enumeration>
-         <xs:enumeration value="EUV">
-            <xs:annotation>
-               <xs:documentation>
-                 12 eV &lt;= energy &lt;= 120 eV
-               </xs:documentation>
-            </xs:annotation>
-         </xs:enumeration>
-         <xs:enumeration value="X-ray">
-            <xs:annotation>
-               <xs:documentation>
-                 0.12 keV &lt;= energy &lt;= 120 keV
-               </xs:documentation>
-            </xs:annotation>
-         </xs:enumeration>
-         <xs:enumeration value="Gamma-ray">
-            <xs:annotation>
-               <xs:documentation>
-                 energy &gt;= 120 keV
-               </xs:documentation>
-            </xs:annotation>
-         </xs:enumeration>
-      </xs:restriction>
-   </xs:simpleType>
 
    <xs:complexType name="TableSet">
       <xs:annotation>
@@ -461,7 +403,7 @@
       </xs:annotation>
 
       <xs:sequence>
-         <xs:element name="name" type="xs:token" minOccurs="1" maxOccurs="1">
+         <xs:element name="name" type="xs:token" minOccurs="1">
            <xs:annotation>
              <xs:documentation>
                A name for the group of tables.  
@@ -496,7 +438,7 @@
          </xs:element>
 
          <xs:element name="description" type="xs:token" 
-                     minOccurs="0" maxOccurs="1">
+                     minOccurs="0">
            <xs:annotation>
              <xs:documentation>
                A free text description of the group of tables that should
@@ -658,7 +600,7 @@
                </xs:element>
 
                <xs:element name="resultType" type="xs:token" 
-                           minOccurs="0" maxOccurs="1">
+                           minOccurs="0">
                   <xs:annotation>
                      <xs:documentation>
                        The MIME media type of a document returned in 
@@ -677,8 +619,7 @@
                   </xs:annotation>
                </xs:element>
 
-               <xs:element name="testQuery" type="xs:string" minOccurs="0" 
-                           maxOccurs="1">
+               <xs:element name="testQuery" type="xs:string" minOccurs="0">
                   <xs:annotation>
                     <xs:documentation>
                        An ampersand-delimited list of arguments that
@@ -735,8 +676,7 @@
                        through this service.
                      </xs:documentation>
                      <xs:documentation>
-                       Each schema name and each table name must be
-                       unique within this tableset.
+                     	Each schema name must be unique within a tableset.
                      </xs:documentation>
                   </xs:annotation>
 
@@ -775,7 +715,7 @@
    <xs:complexType name="Table">
       <xs:sequence>
          <xs:element name="name" type="xs:token" 
-                     minOccurs="1" maxOccurs="1">
+                     minOccurs="1">
             <xs:annotation>
                <xs:documentation>
                   The fully qualified name of the table.  This name 
@@ -827,11 +767,10 @@
             </xs:annotation>
          </xs:element>
 
-         <xs:element name="nrows" type="xs:integer" minOccurs="0"
-            maxOccurs="1">
+         <xs:element name="nrows" type="xs:nonNegativeInteger" minOccurs="0">
             <xs:annotation>
                <xs:documentation>
-                  The size of the table in rows.
+                  The approximate size of the table in rows.
                </xs:documentation>
                <xs:documentation>
                   This is not expected to be exact.  For instance, the
@@ -868,7 +807,7 @@
             <xs:documentation>
                A name for the role this table plays.  Recognized
                values include “output”, indicating this table is output 
-               from a query; “base_table", indicating a table
+               from a query; “base_table”, indicating a table
                whose records represent the main subjects of its
                schema; and “view”, indicating that the table represents
                a useful combination or subset of other tables.  Other 
@@ -928,11 +867,7 @@
                </xs:documentation>
                <xs:documentation>
                   There are no requirements for compliance with any 
-                  particular UCD standard.  The format of the UCD can
-                  be used to distinguish between UCD1, UCD1+, and
-                  SIA-UCD.  See 
-                  http://ivoa.net/Documents/latest/UCDlist.html
-                  for the latest IVOA standard set.  
+                  particular UCD standard.
                </xs:documentation>
             </xs:annotation>
          </xs:element>
@@ -984,8 +919,12 @@
                         “nullable”.  
                      </xs:documentation>
                      <xs:documentation>
-                        See the specification document for definitions 
-                        of recognized keywords.
+                     	While other values are allowed, the following semantics
+                     	is defined by this specification: indexed – The column
+                     	has an index on it for faster search against its values;
+                     	primary – The values column in the column represent in
+                     	total or in part a primary key for its table; nullable –
+                     	the column may contain null or empty values. 
                      </xs:documentation>
                   </xs:annotation>
                </xs:element>
@@ -1012,21 +951,19 @@
             fixed data type. 
          </xs:documentation>
          <xs:documentation>
-            The allowed data type names do not imply a size or precise
-            format.  This type is intended to be sufficient for describing
-            an input parameter to a simple REST service or a function 
-            written in a weakly-typed language.
+         	DALI-compliant services should use VOTableType here, others
+         	should use SimpleDataType.
          </xs:documentation>
       </xs:annotation>
 
       <xs:complexContent>
          <xs:extension base="vs:BaseParam">
             <xs:sequence>
-               <xs:element name="dataType" type="vs:SimpleDataType" 
+               <xs:element name="dataType" type="vs:DataType" 
                            minOccurs="0">
                   <xs:annotation>
                      <xs:documentation>
-                        A type of data contained in the parameter
+                        A type of data contained in the parameter.
                      </xs:documentation>
                   </xs:annotation>
                </xs:element>
@@ -1144,7 +1081,7 @@
                   </xs:documentation>
                   <xs:documentation>
                      If an application does not recognize this
-                     extendedType, it should attempt to handle value
+                     extendedType, it should attempt to handle the value
                      assuming the type given by the element's value.
                      string is a recommended default type.
                   </xs:documentation>
@@ -1524,5 +1461,3 @@
    </xs:simpleType>
 
 </xs:schema>
-<!-- vim:sta:sw=3:et
--->
