@@ -20,6 +20,8 @@
       <title>title</title>
       <shortName>shortName</shortName>
       <identifier>ivo://test.org/resource1</identifier>
+      <altIdentifier>doi:2</altIdentifier>
+      <altIdentifier>urn:1</altIdentifier>
       <curation>
          <publisher>publisher name</publisher>
          <creator>
@@ -57,7 +59,7 @@
          <relationship>
             <relationshipType>service-for</relationshipType>
             <relatedResource ivo-id="ivo://test.org/data">data1</relatedResource>
-            <relatedResource ivo-id="ivo://test.org/data2">data2</relatedResource>
+            <relatedResource altIdentifier="doi:1">data2</relatedResource>
          </relationship>
          <relationship>
             <relationshipType>related-to</relationshipType>
@@ -138,7 +140,7 @@
       </capability>
       
    </ri:Resource>
-      <ri:Resource created="2001-12-31T12:00:00" status="active"
+   <ri:Resource created="2001-12-31T12:00:00" status="active"
       updated="2001-12-31T12:00:00" xsi:type="vr:Organisation"
    >
       <validationLevel validatedBy="ivo://test.org/pah">0</validationLevel>

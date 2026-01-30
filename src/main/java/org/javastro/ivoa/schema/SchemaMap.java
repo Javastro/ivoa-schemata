@@ -95,7 +95,7 @@ public class SchemaMap {
        
       	ALL.put("http://www.ivoa.net/xml/VORegistry/v1.0","/schema/VORegistry-v1.0.xsd");        	
        
-        ALL.put("http://www.ivoa.net/xml/VOResource/v1.0","/schema/VOResource-v1.1.xsd");
+        ALL.put("http://www.ivoa.net/xml/VOResource/v1.0","/schema/VOResource-v1.2.xsd");
         
       	ALL.put("http://www.ivoa.net/xml/VOApplication/v1.0rc1","/schema/VOApplication-1.0.xsd");
         ALL.put("http://www.ivoa.net/xml/StandardsRegExt/v1.0","/schema/StandardsRegExt-1.0.xsd");
