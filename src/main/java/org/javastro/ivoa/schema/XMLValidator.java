@@ -51,8 +51,24 @@ public class XMLValidator {
             .getLogger(XMLValidator.class);
     private SimpleErrorHandler errorHandler = new SimpleErrorHandler();
     private Map<ErrorKind, List<ErrorDesciption>> errorMap = new HashMap<>();
-    
 
+    final StreamSource[] schemaAsSources ;
+
+    /**
+     * standard validator will validate only against the registry schema.
+     */
+    public XMLValidator() {
+        this(SchemaMap.getRegistrySchemaAsSources());
+    }
+
+    /**
+     * specify exactly which schema will be used for validation.
+     * @param schemaAsSources
+     */
+    public XMLValidator(StreamSource[] schemaAsSources){
+        this.schemaAsSources = schemaAsSources;
+
+    }
     /**
      * @param args
      */
@@ -109,7 +125,8 @@ public class XMLValidator {
            Validator validator = null;
             try {
                 schemaFactory.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "file");
-                Schema schema = schemaFactory.newSchema(SchemaMap.getRegistrySchemaAsSources()); //TODO just allow against all the schema?
+
+                Schema schema = schemaFactory.newSchema(schemaAsSources); //TODO just allow against all the schema?
                 validator = schema.newValidator();
             } catch (SAXException e) {
                 logger.error("cannot create validator", e);

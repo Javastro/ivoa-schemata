@@ -181,12 +181,21 @@ public class SchemaMap {
         List<Namespaces> ns = Arrays.asList(OAI_PMH, OAI_DC, DC, RI, VR, VS, SIA,CS,REG, VA, VSTD, VOSI_TAB, STC);
         return schemaSourceFromNamespaces(ns);
     }
-    
+
+    /**
+     * all the schema known to the system.
+     * @return array of StreamSources of those schema.
+     */
     public static StreamSource[] getAllSchemaAsSources() {
         return schemaSourceFromNamespaces(Namespaces.getAllIVOA());
     }
 
-    private static StreamSource[] schemaSourceFromNamespaces(
+    /**
+     * get schema from a list of their namespaces.
+     * @param ns the list of namespaces of the schema
+     * @return array of StreamSources of those schema.
+     */
+    public static StreamSource[] schemaSourceFromNamespaces(
             List<Namespaces> ns) {
         return ns.stream().map(n -> SchemaMap.getSchemaURL(n.getNamespace()))
                    .map(u -> {
