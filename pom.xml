@@ -15,7 +15,7 @@
 
    <packaging>jar</packaging>
    <name>ivoa-schemata</name>
-   <version>0.9.12</version>
+   <version>0.9.13</version>
    <description>
       A collection of IVOA schema files and some associated utility classes.
    </description>
