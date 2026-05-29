@@ -99,6 +99,7 @@ public class SchemaMap {
         
       	ALL.put("http://www.ivoa.net/xml/VOApplication/v1.0rc1","/schema/VOApplication-1.0.xsd");
         ALL.put("http://www.ivoa.net/xml/StandardsRegExt/v1.0","/schema/StandardsRegExt-1.0.xsd");
+        ALL.put("http://www.ivoa.net/xml/DocRegExt/v1","/schema/DocRegExt-v1.0.xsd");
 
         
         ALL.put("http://www.ivoa.net/xml/TAPRegExt/v1.0","/schema/TAPRegExt-v1.0.xsd");
@@ -178,9 +179,11 @@ public class SchemaMap {
      */
     public static StreamSource[] getRegistrySchemaAsSources()
     {
-        List<Namespaces> ns = Arrays.asList(OAI_PMH, OAI_DC, DC, RI, VR, VS, SIA,CS,REG, VA, VSTD, VOSI_TAB, STC);
+        List<Namespaces> ns = Arrays.asList(OAI_PMH, OAI_DC, DC, RI, VR, VS, SIA,CS,REG, VA, VSTD, VOSI_TAB, STC, DOC);
         return schemaSourceFromNamespaces(ns);
     }
+
+
 
     /**
      * all the schema known to the system.
