@@ -174,12 +174,11 @@ public class SchemaMap {
      * declaration at the top.
      * 
      * 
-     * @return
-     * 
+     *
      */
     public static StreamSource[] getRegistrySchemaAsSources()
     {
-        List<Namespaces> ns = Arrays.asList(OAI_PMH, OAI_DC, DC, RI, VR, VS, SIA,CS,REG, VA, VSTD, VOSI_TAB, STC, DOC);
+        List<Namespaces> ns = Arrays.asList(OAI_PMH, OAI_DC, DC, RI, VR, VS, SIA,CS,REG, VA, VSTD, VOSI_TAB, REGTAP, STC, DOC);
         return schemaSourceFromNamespaces(ns);
     }
 
